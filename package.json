@@ -9,6 +9,7 @@
 		"prettier": "^2.2.1"
 	},
 	"scripts": {
-		"start": "node index.js"
+		"start": "node index.js",
+		"heroku-postbuild": "cd client && yarn && yarn run build"
 	}
 }
