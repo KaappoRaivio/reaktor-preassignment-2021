@@ -1,0 +1,23 @@
+@import "variables";
+
+.color {
+	flex: 1 1 25%;
+	//border: 1px solid red;
+	position: relative;
+	border: 0.5px lightgray solid;
+	filter: drop-shadow(1px 2px 1px gray);
+	background-color: $background-color;
+	//margin-left: $product-margin;
+}
+
+.color:after {
+	content: "";
+	display: block;
+	padding-bottom: 100%;
+}
+
+.content {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}

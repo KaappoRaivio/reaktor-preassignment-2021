@@ -1,0 +1,32 @@
+@import "variables";
+
+.category {
+	font-size: 150%;
+	text-transform: capitalize;
+    margin-bottom: $vertical-spacing;
+    border: 0.5px lightgray solid;
+    filter: drop-shadow(1px 2px 1px gray);
+    border-radius: 3px;
+    padding: $category-padding;
+    background-color: $background-color;
+
+    transition: background-color 0.15s linear;
+}
+
+.selected {
+	background-color: darken($background-color, 10%);
+}
+
+.category:hover {
+    background-color: darken($background-color, 10%);
+}
+
+.categories {
+	padding: $product-margin;
+}
+.title {
+    font-weight: bold;
+    font-size: 150%;
+    margin-bottom: $vertical-spacing * 2;
+}
+

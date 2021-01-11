@@ -1,0 +1,61 @@
+@import "variables";
+
+.product {
+	//flex: 1 0 25%;
+	//border: 1px solid red;
+	position: relative;
+	border: 0.5px lightgray solid;
+	filter: drop-shadow(1px 2px 1px gray);
+	background-color: $background-color;
+	//margin-left: $product-margin;
+}
+
+.product:after {
+	content: "";
+	display: block;
+	padding-bottom: 100%;
+}
+
+.content {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	padding: $category-padding;
+}
+
+.name {
+	font-weight: bold;
+	font-size: 200%;
+}
+
+.manufacturer {
+	text-transform: capitalize;
+	font-size: 125%;
+}
+
+.price {
+	position: absolute;
+	left: $category-padding;
+	bottom: $category-padding;
+}
+
+.stockStatus {
+	position: absolute;
+	bottom: $category-padding;
+	right: $category-padding;
+}
+
+.colors {
+	display: grid;
+	position: absolute;
+	//height: 10px;
+	grid-template-columns: repeat(6, 1fr);
+	grid-gap: 2%;
+	width: 100%;
+	bottom: 12%;
+	left: $category-padding;
+}
+
+.grayOut {
+	color: lighten($text-color, 50%);
+}
