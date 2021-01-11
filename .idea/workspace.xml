@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="77dc3b20-1a00-4828-8770-a80017687325" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/.prettierrc.json" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="DarkyenusTimeTracker">
+    <option name="totalTimeSeconds" value="25009" />
+    <option name="gitIntegration" value="true" />
+    <option name="naggedAbout" value="1" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JupyterTrust" id="24d6bada-2dad-40fb-b5cf-0000b5199cab" />
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1ms9xKLq7iHZXut0wWQ5YbA9Lv5" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="prettier.files.pattern" value="{**/*,*}.{js,ts,jsx,tsx,json}" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
+    <property name="run.prettier.on.save" value="true" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="77dc3b20-1a00-4828-8770-a80017687325" name="Default Changelist" comment="" />
+      <created>1610271678014</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1610271678014</updated>
+      <workItem from="1610271679211" duration="7154000" />
+      <workItem from="1610280624293" duration="7170000" />
+      <workItem from="1610288379271" duration="11716000" />
+      <workItem from="1610300985271" duration="141000" />
+      <workItem from="1610304658197" duration="6504000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1294" y="1080" width="616" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1610279682202">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="1294" y="1080" width="616" height="403" key="#com.intellij.fileTypes.FileTypeChooser/0.1080.1920.1080/891.0.1029.1080@0.1080.1920.1080" timestamp="1610279682202" />
+    <state x="1486" y="1080" width="424" height="491" key="FileChooserDialogImpl" timestamp="1610367945617">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="1486" y="1080" width="424" height="491" key="FileChooserDialogImpl/0.1080.1920.1080/926.0.994.1080@0.1080.1920.1080" timestamp="1610367945617" />
+    <state width="1846" height="641" key="GridCell.Tab.0.bottom" timestamp="1610280607146">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state width="1846" height="641" key="GridCell.Tab.0.bottom/0.1080.1920.1080/891.0.1029.1080@0.1080.1920.1080" timestamp="1610280607146" />
+    <state width="1846" height="641" key="GridCell.Tab.0.center" timestamp="1610280607146">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state width="1846" height="641" key="GridCell.Tab.0.center/0.1080.1920.1080/891.0.1029.1080@0.1080.1920.1080" timestamp="1610280607146" />
+    <state width="1846" height="641" key="GridCell.Tab.0.left" timestamp="1610280607146">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state width="1846" height="641" key="GridCell.Tab.0.left/0.1080.1920.1080/891.0.1029.1080@0.1080.1920.1080" timestamp="1610280607146" />
+    <state width="1846" height="641" key="GridCell.Tab.0.right" timestamp="1610280607146">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state width="1846" height="641" key="GridCell.Tab.0.right/0.1080.1920.1080/891.0.1029.1080@0.1080.1920.1080" timestamp="1610280607146" />
+    <state x="724" y="1416" width="1196" height="744" key="SettingsEditor" timestamp="1610367997482">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="724" y="1416" width="1196" height="744" key="SettingsEditor/0.1080.1920.1080/926.0.994.1080@0.1080.1920.1080" timestamp="1610367997482" />
+    <state x="2378" y="715" width="1022" height="737" key="SettingsEditor/835.2160.1920.1080/891.0.2949.2160@891.0.2949.2160" timestamp="1610286129950" />
+    <state x="489" y="1983" width="437" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1610306900202">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="489" y="1983" width="437" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.1080.1920.1080/926.0.994.1080@0.1080.1920.1080" timestamp="1610306900202" />
+    <state x="2558" y="515" key="run.anything.popup" timestamp="1610278765489">
+      <screen x="891" y="0" width="1029" height="1080" />
+    </state>
+    <state x="2558" y="515" key="run.anything.popup/0.1080.1920.1080/891.0.1029.1080@0.1080.1920.1080" timestamp="1610278765489" />
+    <state x="1081" y="1335" width="672" height="339" key="search.everywhere.popup" timestamp="1610367985971">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="2557" y="401" width="672" height="678" key="search.everywhere.popup/0.1080.1920.1080/891.0.1029.1080@0.1080.1920.1080" timestamp="1610280607051" />
+    <state x="1081" y="1335" width="672" height="339" key="search.everywhere.popup/0.1080.1920.1080/926.0.994.1080@0.1080.1920.1080" timestamp="1610367985971" />
+    <state x="2552" y="509" width="672" height="678" key="search.everywhere.popup/835.2160.1920.1080/891.0.2949.2160@891.0.2949.2160" timestamp="1610280672067" />
+  </component>
+</project>
