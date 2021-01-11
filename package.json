@@ -5,7 +5,9 @@
 	"author": "Kaappo Raivio <kaappo.raivio@gmail.com>",
 	"license": "MIT",
 	"dependencies": {
+		"dom-parser": "^0.1.6",
 		"express": "^4.17.1",
+		"node-fetch": "^2.6.1",
 		"prettier": "^2.2.1"
 	},
 	"scripts": {

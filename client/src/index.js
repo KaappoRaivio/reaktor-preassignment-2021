@@ -12,7 +12,7 @@ ReactDOM.render(
 		<Router>
 			{/*<App />*/}
 			<Switch>
-				<Route path={"/category/:category"} component={App} />
+				<Route path={"/category/:URLCategory"} component={App} />
 				<Route path={"/"} exact component={App} />
 			</Switch>
 		</Router>

@@ -3,17 +3,17 @@ import React from "react";
 import styles from "./Products.module.scss";
 import Product from "./Product";
 
-const Products = ({ loadingProducts, products, loadingStockState, stockState, error, selectedCategory }) => {
+const Products = ({ loadingProducts, products, categories, selectedCategory }) => {
+	console.log(products);
 	if (loadingProducts) {
 		return <div>loading</div>;
 	} else {
-		// console.log(products);
 		return (
 			<div>
 				<p className={styles.title}>Products</p>
 				<div className={styles.productFlexbox}>
-					{products[selectedCategory].slice(0, 1000).map(product => {
-						return <Product {...product} stockState={stockState} loadingStockState={loadingStockState} />;
+					{products[categories[selectedCategory]].slice(0, 1000).map(product => {
+						return <Product {...product} />;
 					})}
 				</div>
 			</div>
