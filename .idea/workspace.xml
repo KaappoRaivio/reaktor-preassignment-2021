@@ -11,23 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77dc3b20-1a00-4828-8770-a80017687325" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/src/API.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/ProcessData.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/sampleResponse.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/API.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/client/ApiClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/BadApiClient.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/client/ResponseParser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Categories.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Categories.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Product.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Product.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Products.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Products.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.yarn-integrity" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.yarn-integrity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +26,7 @@
     <option name="done" value="true" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="32798" />
+    <option name="totalTimeSeconds" value="33125" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -111,7 +99,9 @@
       <workItem from="1610280624293" duration="7170000" />
       <workItem from="1610288379271" duration="11716000" />
       <workItem from="1610300985271" duration="141000" />
-      <workItem from="1610304658197" duration="16750000" />
+      <workItem from="1610304658197" duration="17086000" />
+      <workItem from="1610400757528" duration="57000" />
+      <workItem from="1610400818504" duration="167000" />
     </task>
     <servers />
   </component>
@@ -135,10 +125,11 @@
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
     <state x="1294" y="1080" width="616" height="403" key="#com.intellij.fileTypes.FileTypeChooser/0.1080.1920.1080/891.0.1029.1080@0.1080.1920.1080" timestamp="1610279682202" />
-    <state x="1486" y="1080" width="424" height="491" key="FileChooserDialogImpl" timestamp="1610367945617">
-      <screen x="0" y="1080" width="1920" height="1080" />
+    <state x="3901" y="0" width="424" height="491" key="FileChooserDialogImpl" timestamp="1610400810457">
+      <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="1486" y="1080" width="424" height="491" key="FileChooserDialogImpl/0.1080.1920.1080/926.0.994.1080@0.1080.1920.1080" timestamp="1610367945617" />
+    <state x="3901" y="0" key="FileChooserDialogImpl/56.387.1864.1053/1920.0.2560.1440@1920.0.2560.1440" timestamp="1610400810457" />
     <state width="1846" height="641" key="GridCell.Tab.0.bottom" timestamp="1610280607146">
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>

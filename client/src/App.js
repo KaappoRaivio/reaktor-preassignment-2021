@@ -28,7 +28,7 @@ const useRequest = url => {
 
 const App = () => {
 	const categories = useRequest(`${API_ENDPOINT}/api/categories`);
-	const products = useRequest(`${API_ENDPOINT}/api/products`);
+	const products = useRequest(`${API_ENDPOINT}/api/products?debug=true`);
 	const [selectedCategory, setSelectedCategory] = useState(0);
 
 	const history = useHistory();
