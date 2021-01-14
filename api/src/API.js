@@ -13,15 +13,12 @@ module.exports = app => {
 				res.status(200);
 				res.json({ products });
 			}
-
-			console.log(`Sent ${Object.keys(products).length} products`);
 		} catch (err) {
 			next(err);
 		}
 	});
 
 	app.get("/api/categories", (req, res) => {
-		console.log(`Sending: ${PRODUCT_CATEGORIES}`);
 		res.status(200).json(PRODUCT_CATEGORIES);
 	});
 };

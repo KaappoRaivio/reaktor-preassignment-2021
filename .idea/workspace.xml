@@ -11,18 +11,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77dc3b20-1a00-4828-8770-a80017687325" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/test/testData/availabilityHennex.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/test/testData/availabilityIppal.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/test/testData/availabilityJuuran.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/test/testData/productsBeanies.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/test/testData/productsFacemasks.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/test/testData/productsGloves.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/API.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/BadApiClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/BadApiClient.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/test/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/test/App.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/test/testData/availabilityData.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/test/testData/availabilityParseTestData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +25,7 @@
     <option name="done" value="true" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="58429" />
+    <option name="totalTimeSeconds" value="58725" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -119,7 +111,7 @@
       <workItem from="1610439015328" duration="9077000" />
       <workItem from="1610455010186" duration="1177000" />
       <workItem from="1610456204831" duration="1334000" />
-      <workItem from="1610483537388" duration="62129000" />
+      <workItem from="1610483537388" duration="62588000" />
     </task>
     <servers />
   </component>

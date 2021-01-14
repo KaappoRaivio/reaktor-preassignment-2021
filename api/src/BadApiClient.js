@@ -7,7 +7,6 @@ const {
 } = require("./ProcessData");
 
 const API_ENDPOINT = "https://bad-api-assignment.reaktor.com/v2";
-
 const PRODUCT_CATEGORIES = ["gloves", "facemasks", "beanies"];
 
 const getCategory = category => {
@@ -44,15 +43,13 @@ const getProducts = async () => {
 	for (const response of categoryResponses) {
 		products[response.category] = response.products;
 	}
-	// console.log(finalResult);
-	// return finalResult;
+
 	return addAvailabilityToProductInformation(products);
 };
 
 const getProductsAndAvailability = async products => {
 	const manufacturers = getManufacturers(products);
 
-	console.log("sending availability");
 	const availabilityRequests = manufacturers.map(getAvailability);
 	const availabilityResponses = await Promise.all(availabilityRequests);
 
@@ -60,9 +57,6 @@ const getProductsAndAvailability = async products => {
 	for (const response of availabilityResponses) {
 		availability = { ...availability, ...response };
 	}
-
-	console.log(availability);
-	console.log(Object.keys(availability).length);
 
 	return combineAvailabilityWithProductInformation(products, availability);
 };

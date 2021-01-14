@@ -37,7 +37,6 @@ describe("Test the API", () => {
 				expect(response.statusCode).toBe(200);
 
 				const products = response.body;
-				// console.log(products.products.gloves);
 
 				for (const category in products.products) {
 					for (const product of products.products[category]) {
