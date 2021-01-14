@@ -11,14 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77dc3b20-1a00-4828-8770-a80017687325" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Categories.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Categories.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Color.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Color.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Product.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Product.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Products.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Products.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +22,7 @@
     <option name="done" value="true" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="52052" />
+    <option name="totalTimeSeconds" value="52123" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -98,7 +91,7 @@
       <workItem from="1610439015328" duration="9077000" />
       <workItem from="1610455010186" duration="1177000" />
       <workItem from="1610456204831" duration="1334000" />
-      <workItem from="1610483537388" duration="55099000" />
+      <workItem from="1610483537388" duration="55170000" />
     </task>
     <servers />
   </component>
