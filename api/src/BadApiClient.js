@@ -67,4 +67,4 @@ const getProductsAndAvailability = async products => {
 	return combineAvailabilityWithProductInformation(products, availability);
 };
 
-module.exports = { getProducts, getProductsAndAvailability, PRODUCT_CATEGORIES };
+module.exports = { getProducts, getProductsAndAvailability, PRODUCT_CATEGORIES, API_ENDPOINT };

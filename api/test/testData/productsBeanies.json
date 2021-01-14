@@ -1,0 +1,26 @@
+[
+	{
+		"id": "392eb44d6cbd9f37c8",
+		"type": "beanies",
+		"name": "OOTÄNREV SLIP",
+		"color": ["black"],
+		"price": 12,
+		"manufacturer": "hennex"
+	},
+	{
+		"id": "438dc024f17e98a6cf2e",
+		"type": "beanies",
+		"name": "UPMOFOL ALPINE ANIMAL",
+		"color": ["purple"],
+		"price": 13,
+		"manufacturer": "ippal"
+	},
+	{
+		"id": "8deaa116a4f3614dba65005",
+		"type": "beanies",
+		"name": "TAIOOTÖIS WIND",
+		"color": ["purple"],
+		"price": 18,
+		"manufacturer": "juuran"
+	}
+]

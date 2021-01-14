@@ -1,0 +1,26 @@
+[
+	{
+		"id": "392eb44d6cbd9f37c9",
+		"type": "gloves",
+		"name": "OOTÄNREV SLIP",
+		"color": ["black"],
+		"price": 12,
+		"manufacturer": "hennex"
+	},
+	{
+		"id": "438dc024f17e98a6cf2f",
+		"type": "gloves",
+		"name": "UPMOFOL ALPINE ANIMAL",
+		"color": ["purple"],
+		"price": 13,
+		"manufacturer": "ippal"
+	},
+	{
+		"id": "8deaa116a4f3614dba65006",
+		"type": "gloves",
+		"name": "TAIOOTÖIS WIND",
+		"color": ["purple"],
+		"price": 18,
+		"manufacturer": "juuran"
+	}
+]

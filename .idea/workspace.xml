@@ -11,36 +11,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77dc3b20-1a00-4828-8770-a80017687325" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/test/App.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/test/testData/availabilityData.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/test/testData/availabilityHennex.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/test/testData/availabilityIppal.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/test/testData/availabilityJuuran.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/test/testData/productsBeanies.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/test/testData/productsFacemasks.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/test/testData/productsGloves.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/ProcessData.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/ProcessData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reportWebVitals.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.yarn-integrity" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.yarn-integrity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/inherits/inherits.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/inherits/inherits.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/inherits/inherits_browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/inherits/inherits_browser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/inherits/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/inherits/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mime/.npmignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mime/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mime/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mime/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mime/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mime/cli.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mime/cli.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mime/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mime/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mime/src/build.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mime/src/test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mime/types.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/send/node_modules/.bin/mime" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/send/node_modules/.bin/mime" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/send/node_modules/inherits/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/send/node_modules/inherits/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/send/node_modules/inherits/inherits.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/send/node_modules/inherits/inherits_browser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/send/node_modules/inherits/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/BadApiClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/BadApiClient.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/test/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/test/App.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/test/testData/availabilityData.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/test/testData/availabilityParseTestData.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
@@ -53,7 +33,7 @@
     <option name="done" value="true" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="55955" />
+    <option name="totalTimeSeconds" value="58429" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -84,7 +64,7 @@
     <property name="javascript.nodejs.core.library.configured.version" value="12.18.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.19.13" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wilmacrawler" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/api/test/testData" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -104,6 +84,7 @@
       <recent name="$PROJECT_DIR$/src/components" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/api/test/testData" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -138,7 +119,7 @@
       <workItem from="1610439015328" duration="9077000" />
       <workItem from="1610455010186" duration="1177000" />
       <workItem from="1610456204831" duration="1334000" />
-      <workItem from="1610483537388" duration="59589000" />
+      <workItem from="1610483537388" duration="62129000" />
     </task>
     <servers />
   </component>
