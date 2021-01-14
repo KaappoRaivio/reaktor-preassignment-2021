@@ -11,7 +11,9 @@
 	@media screen and (min-width: 300px + 200px * $i) {
 		.productFlexbox {
 			grid-template-columns: repeat($i + 1, 1fr);
-			font-size: 1px + $i * 1.5px;
+			//font-size: (300px + 200px * $i) / 300;
+			font-size: 0.8vw / $i * 6;
+
 		}
 	}
 }

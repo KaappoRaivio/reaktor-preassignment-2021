@@ -25,17 +25,41 @@ const getManufacturers = products => {
 	return [...result];
 };
 
-const combineAvailabilityWithProductInformation = (products, availability) => {
+const addAvailabilityToProductInformation = products => {
 	const result = {};
 
 	for (const category in products) {
 		result[category] = [];
 		for (const product of products[category]) {
-			result[category].push({ ...product, availability: availability[product.id] || "No information" });
+			result[category].push({
+				...product,
+				availability: { loading: true, availability: null },
+			});
 		}
 	}
 
 	return result;
 };
 
-module.exports = { parseAvailabilityResponse, getManufacturers, combineAvailabilityWithProductInformation };
+const combineAvailabilityWithProductInformation = (products, availability) => {
+	const result = {};
+
+	for (const category in products) {
+		result[category] = [];
+		for (const product of products[category]) {
+			result[category].push({
+				...product,
+				availability: { loading: false, availability: availability[product.id] || "No information" },
+			});
+		}
+	}
+
+	return result;
+};
+
+module.exports = {
+	parseAvailabilityResponse,
+	getManufacturers,
+	combineAvailabilityWithProductInformation,
+	addAvailabilityToProductInformation,
+};

@@ -2,9 +2,9 @@ import React from "react";
 
 import styles from "./Products.module.scss";
 import Product from "./Product";
+import PropTypes from "prop-types";
 
 const Products = ({ loadingProducts, products, categories, selectedCategory }) => {
-	console.log(products);
 	if (loadingProducts) {
 		return <div>loading</div>;
 	} else {
@@ -13,7 +13,7 @@ const Products = ({ loadingProducts, products, categories, selectedCategory }) =
 				<p className={styles.title}>Products</p>
 				<div className={styles.productFlexbox}>
 					{products[categories[selectedCategory]].slice(0, 1000).map(product => {
-						return <Product {...product} />;
+						return <Product key={product.id} {...product} />;
 					})}
 				</div>
 			</div>
@@ -21,6 +21,11 @@ const Products = ({ loadingProducts, products, categories, selectedCategory }) =
 	}
 };
 
-Products.propTypes = {};
+Products.propTypes = {
+	loadingProducts: PropTypes.bool.isRequired,
+	products: PropTypes.object,
+	categories: PropTypes.arrayOf(PropTypes.string).isRequired,
+	selectedCategory: PropTypes.number.isRequired,
+};
 
 export default Products;

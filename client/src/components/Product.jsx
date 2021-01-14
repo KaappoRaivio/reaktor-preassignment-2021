@@ -2,8 +2,17 @@ import styles from "./Product.module.scss";
 import React from "react";
 import Color from "./Color";
 
+import PropTypes from "prop-types";
+
 const Product = ({ name, id, price, manufacturer, availability, color }) => {
 	let grayOut = false;
+
+	let availabilityElement;
+	if (availability.loading) {
+		availabilityElement = <div className={`${styles.availability} ${styles.grayOut}`}>Loading</div>;
+	} else {
+		availabilityElement = <div className={styles.availability}>{availability.availability}</div>;
+	}
 
 	return (
 		<div className={styles.product} key={id}>
@@ -13,15 +22,24 @@ const Product = ({ name, id, price, manufacturer, availability, color }) => {
 				<div className={styles.price}>
 					Price: <b>{price}</b>
 				</div>
-				<div className={`${styles.stockStatus} ${grayOut ? styles.grayOut : ""}`}>{availability}</div>
+				{availabilityElement}
 				<div className={styles.colors}>
 					{color.map(_color => (
-						<Color color={_color} />
+						<Color key={_color} color={_color} />
 					))}
 				</div>
 			</div>
 		</div>
 	);
+};
+
+Product.propTypes = {
+	name: PropTypes.string.isRequired,
+	id: PropTypes.string.isRequired,
+	price: PropTypes.number.isRequired,
+	manufacturer: PropTypes.string.isRequired,
+	availability: PropTypes.shape({ loading: PropTypes.bool.isRequired, availability: PropTypes.string }).isRequired,
+	color: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default Product;

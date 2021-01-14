@@ -9,13 +9,13 @@ $column-padding: 10px;
 }
 
 .categories {
-  flex: 0 1 20%;
+  flex: 0 1 unquote("min(20%, 200px)");
   margin: $column-margin;
   //background: yellow;
 }
 
 .products {
-  flex: 0 1 80%;
+  flex: 1 1 80%;
   //background: green;
   margin: $column-margin;
 }

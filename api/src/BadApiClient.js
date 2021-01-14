@@ -1,7 +1,10 @@
 const fetch = require("node-fetch");
-const { combineAvailabilityWithProductInformation } = require("./ProcessData");
-const { parseAvailabilityResponse } = require("./ProcessData.js");
-const { getManufacturers } = require("./ProcessData");
+const {
+	combineAvailabilityWithProductInformation,
+	parseAvailabilityResponse,
+	getManufacturers,
+	addAvailabilityToProductInformation,
+} = require("./ProcessData");
 
 const API_ENDPOINT = "https://bad-api-assignment.reaktor.com/v2";
 
@@ -43,7 +46,12 @@ const getProducts = async () => {
 	for (const response of categoryResponses) {
 		products[response.category] = response.products;
 	}
+	// console.log(finalResult);
+	// return finalResult;
+	return addAvailabilityToProductInformation(products);
+};
 
+const getProductsAndAvailability = async products => {
 	const manufacturers = getManufacturers(products);
 
 	console.log("sending availability");
@@ -58,9 +66,7 @@ const getProducts = async () => {
 	console.log(availability);
 	console.log(Object.keys(availability).length);
 
-	const finalResult = combineAvailabilityWithProductInformation(products, availability);
-	console.log(finalResult);
-	return finalResult;
+	return combineAvailabilityWithProductInformation(products, availability);
 };
 
-module.exports = { getProducts, PRODUCT_CATEGORIES };
+module.exports = { getProducts, getProductsAndAvailability, PRODUCT_CATEGORIES };

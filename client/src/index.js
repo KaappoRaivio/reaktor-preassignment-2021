@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 // import Switch from "react-router-dom";
 // import Route from "react-router-dom";
 
@@ -13,7 +13,7 @@ ReactDOM.render(
 			{/*<App />*/}
 			<Switch>
 				<Route path={"/category/:URLCategory"} component={App} />
-				<Route path={"/"} exact component={App} />
+				<Route path={"/"} render={() => <Redirect to={"/category/gloves"} />} />
 			</Switch>
 		</Router>
 	</React.StrictMode>,

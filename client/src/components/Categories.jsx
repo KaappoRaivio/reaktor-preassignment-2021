@@ -5,8 +5,6 @@ import styles from "./Categories.module.scss";
 import { useHistory } from "react-router-dom";
 
 const Categories = ({ categories, onCategoryClicked, selectedCategory }) => {
-	console.log(categories);
-
 	return (
 		<div>
 			<p className={styles.title}>Categories</p>
@@ -15,6 +13,7 @@ const Categories = ({ categories, onCategoryClicked, selectedCategory }) => {
 					? categories.json.map((category, index) => (
 							<div
 								// onClick={() => onCategoryClicked(category)}
+								key={category}
 								onClick={() => onCategoryClicked(index)}
 								className={`${styles.category} ${selectedCategory === index ? styles.selected : ""}`}>
 								{category}
