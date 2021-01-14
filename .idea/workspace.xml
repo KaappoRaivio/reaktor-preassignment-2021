@@ -11,22 +11,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77dc3b20-1a00-4828-8770-a80017687325" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/API.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/BadApiClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/BadApiClient.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/ProcessData.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/ProcessData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/client/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Categories.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Categories.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Product.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Product.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Main.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Main.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Color.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Color.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Product.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Product.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Products.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Products.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Products.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Products.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/variables.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.yarn-integrity" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.yarn-integrity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
@@ -40,7 +39,7 @@
     <option name="done" value="true" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="43459" />
+    <option name="totalTimeSeconds" value="48643" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -106,7 +105,7 @@
       <workItem from="1610439015328" duration="9077000" />
       <workItem from="1610455010186" duration="1177000" />
       <workItem from="1610456204831" duration="1334000" />
-      <workItem from="1610483537388" duration="45089000" />
+      <workItem from="1610483537388" duration="51344000" />
     </task>
     <servers />
   </component>
@@ -161,12 +160,16 @@
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
     <state x="489" y="1983" width="437" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.1080.1920.1080/926.0.994.1080@0.1080.1920.1080" timestamp="1610306900202" />
-    <state x="2892" y="335" key="run.anything.popup" timestamp="1610450119490">
+    <state x="2918" y="459" width="620" height="522" key="find.popup" timestamp="1610631188575">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2918" y="459" width="620" height="522" key="find.popup/56.387.1864.1053/1920.0.2560.1440@1920.0.2560.1440" timestamp="1610631188575" />
+    <state x="2892" y="335" key="run.anything.popup" timestamp="1610646626517">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2892" y="335" key="run.anything.popup/0.1080.1920.1080/56.387.1864.693@0.1080.1920.1080" timestamp="1610397410622" />
     <state x="2558" y="515" key="run.anything.popup/0.1080.1920.1080/891.0.1029.1080@0.1080.1920.1080" timestamp="1610278765489" />
-    <state x="2892" y="335" key="run.anything.popup/56.387.1864.1053/1920.0.2560.1440@1920.0.2560.1440" timestamp="1610450119490" />
+    <state x="2892" y="335" key="run.anything.popup/56.387.1864.1053/1920.0.2560.1440@1920.0.2560.1440" timestamp="1610646626517" />
     <state x="3361" y="340" width="896" height="452" key="search.everywhere.popup" timestamp="1610452450780">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>

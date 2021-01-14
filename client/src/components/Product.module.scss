@@ -52,7 +52,7 @@
 	grid-template-columns: repeat(6, 1fr);
 	grid-gap: 2%;
 	width: 100%;
-	bottom: 12%;
+	bottom: calc(1em + 3%);
 	left: $category-padding;
 }
 

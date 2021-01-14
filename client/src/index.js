@@ -1,21 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+import Main from "./Main";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
-// import Switch from "react-router-dom";
-// import Route from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
 ReactDOM.render(
 	<React.StrictMode>
-		<Router>
-			{/*<App />*/}
-			<Switch>
-				<Route path={"/category/:URLCategory"} component={App} />
-				<Route path={"/"} render={() => <Redirect to={"/category/gloves"} />} />
-			</Switch>
-		</Router>
+		<BrowserRouter>
+			<App />
+		</BrowserRouter>
 	</React.StrictMode>,
 	document.getElementById("root")
 );

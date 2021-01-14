@@ -22,8 +22,6 @@ const getAvailability = manufacturer => {
 	return fetch(`${API_ENDPOINT}/availability/${manufacturer}`)
 		.then(res => res.json())
 		.then(responseJSON => {
-			// console.log(responseJSON, manufacturer);
-
 			if (responseJSON.response === "[]") {
 				return getAvailability(manufacturer);
 			}
@@ -39,6 +37,7 @@ const getAvailability = manufacturer => {
 };
 
 const getProducts = async () => {
+	z;
 	const categoryRequests = PRODUCT_CATEGORIES.map(getCategory);
 	const categoryResponses = await Promise.all(categoryRequests);
 
