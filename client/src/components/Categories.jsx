@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "./Categories.module.scss";
+import styles from "../scss/Categories.module.scss";
 
 import { useHistory } from "react-router-dom";
 

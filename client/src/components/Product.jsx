@@ -1,4 +1,4 @@
-import styles from "./Product.module.scss";
+import styles from "../scss/Product.module.scss";
 import React from "react";
 import Color from "./Color";
 

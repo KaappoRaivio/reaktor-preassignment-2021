@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "./Color.module.scss";
+import styles from "../scss/Color.module.scss";
 
 const Color = ({ color }) => (
 	<div className={styles.color}>
