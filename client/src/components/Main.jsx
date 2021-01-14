@@ -69,7 +69,6 @@ const Main = () => {
 		`${API_ENDPOINT}/api/products`,
 		`${API_ENDPOINT}/api/products?withAvailability=true`
 	);
-	// const productsRequest = { waiting: true, JSON: null, error: null };
 
 	const history = useHistory();
 	const [selectedCategoryIndex, setSelectedCategoryIndex] = useState(0);
@@ -79,9 +78,9 @@ const Main = () => {
 		return <div>Error retrieving product categories: {categoriesRequest.error.error}</div>;
 	}
 
-	const newCategoryFromURL =
+	const shouldUpdateSelectedCategoryFromURL =
 		!categoriesRequest.waiting && URLCategory && URLCategory !== categoriesRequest.JSON[selectedCategoryIndex];
-	if (newCategoryFromURL) {
+	if (shouldUpdateSelectedCategoryFromURL) {
 		const index = categoriesRequest.JSON.indexOf(URLCategory);
 		if (index !== -1) {
 			setSelectedCategoryIndex(index);
