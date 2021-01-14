@@ -11,24 +11,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77dc3b20-1a00-4828-8770-a80017687325" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/Main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/MyErrorBoundary.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/API.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/BadApiClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/BadApiClient.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/client/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Main.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Main.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Color.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Color.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Product.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Product.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Products.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Products.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Categories.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Categories.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.yarn-integrity" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.yarn-integrity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +31,7 @@
     <option name="done" value="true" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="48643" />
+    <option name="totalTimeSeconds" value="51626" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -66,6 +58,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="js.last.introduce.type" value="CONST" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../wilmacrawler" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -78,13 +71,14 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/src/components" />
       <recent name="$PROJECT_DIR$/api/src" />
       <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -105,7 +99,7 @@
       <workItem from="1610439015328" duration="9077000" />
       <workItem from="1610455010186" duration="1177000" />
       <workItem from="1610456204831" duration="1334000" />
-      <workItem from="1610483537388" duration="51344000" />
+      <workItem from="1610483537388" duration="54674000" />
     </task>
     <servers />
   </component>
@@ -170,12 +164,12 @@
     <state x="2892" y="335" key="run.anything.popup/0.1080.1920.1080/56.387.1864.693@0.1080.1920.1080" timestamp="1610397410622" />
     <state x="2558" y="515" key="run.anything.popup/0.1080.1920.1080/891.0.1029.1080@0.1080.1920.1080" timestamp="1610278765489" />
     <state x="2892" y="335" key="run.anything.popup/56.387.1864.1053/1920.0.2560.1440@1920.0.2560.1440" timestamp="1610646626517" />
-    <state x="3361" y="340" width="896" height="452" key="search.everywhere.popup" timestamp="1610452450780">
+    <state x="3361" y="340" width="896" height="452" key="search.everywhere.popup" timestamp="1610651430013">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2557" y="401" width="672" height="678" key="search.everywhere.popup/0.1080.1920.1080/891.0.1029.1080@0.1080.1920.1080" timestamp="1610280607051" />
     <state x="1081" y="1335" width="672" height="339" key="search.everywhere.popup/0.1080.1920.1080/926.0.994.1080@0.1080.1920.1080" timestamp="1610367985971" />
-    <state x="3361" y="340" width="896" height="452" key="search.everywhere.popup/56.387.1864.1053/1920.0.2560.1440@1920.0.2560.1440" timestamp="1610452450780" />
+    <state x="3361" y="340" width="896" height="452" key="search.everywhere.popup/56.387.1864.1053/1920.0.2560.1440@1920.0.2560.1440" timestamp="1610651430013" />
     <state x="2552" y="509" width="672" height="678" key="search.everywhere.popup/835.2160.1920.1080/891.0.2949.2160@891.0.2949.2160" timestamp="1610280672067" />
   </component>
 </project>

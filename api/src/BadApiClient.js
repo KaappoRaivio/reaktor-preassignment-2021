@@ -37,7 +37,6 @@ const getAvailability = manufacturer => {
 };
 
 const getProducts = async () => {
-	z;
 	const categoryRequests = PRODUCT_CATEGORIES.map(getCategory);
 	const categoryResponses = await Promise.all(categoryRequests);
 

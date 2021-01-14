@@ -10,7 +10,7 @@ const Categories = ({ categories, onCategoryClicked, selectedCategory }) => {
 			<p className={styles.title}>Categories</p>
 			<div className={styles.categories}>
 				{!categories.waiting
-					? categories.json.map((category, index) => (
+					? categories.JSON.map((category, index) => (
 							<div
 								// onClick={() => onCategoryClicked(category)}
 								key={category}

@@ -1,14 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import Main from "./Main";
+
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import App from "./App";
+import MyErrorBoundary from "./components/MyErrorBoundary";
 
 ReactDOM.render(
 	<React.StrictMode>
 		<BrowserRouter>
-			<App />
+			<MyErrorBoundary>
+				<App />
+			</MyErrorBoundary>
 		</BrowserRouter>
 	</React.StrictMode>,
 	document.getElementById("root")

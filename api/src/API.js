@@ -22,7 +22,6 @@ module.exports = app => {
 
 	app.get("/api/categories", (req, res) => {
 		console.log(`Sending: ${PRODUCT_CATEGORIES}`);
-		// throw new Error("BROKEN");
 		res.status(200).json(PRODUCT_CATEGORIES);
 	});
 };

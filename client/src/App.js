@@ -1,6 +1,7 @@
 import React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
-import Main from "./Main";
+import Main from "./components/Main";
+import MyErrorBoundary from "./components/MyErrorBoundary";
 
 const App = props => (
 	<Switch>
