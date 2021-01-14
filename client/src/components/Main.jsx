@@ -65,6 +65,10 @@ const useCombinedRequest = (url1, url2) => {
 
 const Main = () => {
 	const categoriesRequest = useRequest(`${API_ENDPOINT}/api/categories`);
+	if (categoriesRequest.error) {
+		return <div>Error retrieving product categories: {categoriesRequest.error.error}</div>;
+	}
+
 	const productsRequest = useCombinedRequest(
 		`${API_ENDPOINT}/api/products`,
 		`${API_ENDPOINT}/api/products?withAvailability=true`
@@ -73,10 +77,6 @@ const Main = () => {
 	const history = useHistory();
 	const [selectedCategoryIndex, setSelectedCategoryIndex] = useState(0);
 	const { URLCategory } = useParams();
-
-	if (categoriesRequest.error) {
-		return <div>Error retrieving product categories: {categoriesRequest.error.error}</div>;
-	}
 
 	const shouldUpdateSelectedCategoryFromURL =
 		!categoriesRequest.waiting && URLCategory && URLCategory !== categoriesRequest.JSON[selectedCategoryIndex];
@@ -93,6 +93,8 @@ const Main = () => {
 			history.push(`/category/${categoriesRequest.JSON[index]}`);
 		}
 	};
+
+	const onMoreProductsRequested = amount => {};
 
 	return (
 		<div className={styles.columnContainer}>

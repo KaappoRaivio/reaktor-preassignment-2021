@@ -1,16 +1,20 @@
 const DOMParser = require("dom-parser");
 
-const parser = new DOMParser();
-
 const responseTransform = {
 	instock: "In stock",
 	outofstock: "Out of stock",
 	lessthan10: "Less than 10",
 };
 
+const parser = new DOMParser();
 const parseAvailabilityResponse = DATAPAYLOAD => {
 	const parsed = parser.parseFromString(DATAPAYLOAD.toLowerCase(), "text/xml"); // The XML standard only supports lower case tags
-	return responseTransform[parsed.getElementsByTagName("instockvalue")[0].childNodes[0].text] || "Unknown";
+	try {
+		const text = parsed.getElementsByTagName("instockvalue")[0].childNodes[0].text.trim();
+		return responseTransform[text] || "Unknown";
+	} catch (error) {
+		return "Unknown";
+	}
 };
 
 const getManufacturers = products => {

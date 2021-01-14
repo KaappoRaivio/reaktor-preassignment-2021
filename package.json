@@ -5,15 +5,25 @@
 	"author": "Kaappo Raivio <kaappo.raivio@gmail.com>",
 	"license": "MIT",
 	"dependencies": {
+		"babel-cli": "^6.26.0",
+		"babel-preset-env": "^1.7.0",
 		"dom-parser": "^0.1.6",
 		"express": "^4.17.1",
+		"jest": "^26.6.3",
 		"memory-cache": "^0.2.0",
 		"node-fetch": "^2.6.1",
 		"prettier": "^2.2.1",
+		"superagent": "^6.1.0",
+		"supertest": "^6.0.1",
 		"uuid": "^8.3.2"
 	},
 	"scripts": {
 		"start": "node index.js",
 		"heroku-postbuild": "cd client && yarn && yarn run build"
+	},
+	"jest": {
+		"modulePathIgnorePatterns": [
+			"client/"
+		]
 	}
 }
