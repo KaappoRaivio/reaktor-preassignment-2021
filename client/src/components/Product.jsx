@@ -15,10 +15,11 @@ const Product = ({ name, type, id, price, manufacturer, availability, color }) =
 	}
 
 	return (
-		<div className={styles.product} key={id} data-testid={`product-${type}`}>
+		<div className={styles.product} key={id} data-testid={"product"} role={"listitem"}>
 			<div className={styles.content}>
 				<div className={styles.name}>{name}</div>
-				<div className={styles.manufacturer}>{manufacturer}</div>
+				<div className={styles.manufacturer}>Manufacturer: {manufacturer}</div>
+				<div className={styles.manufacturer}>Category: {type}</div>
 				<div className={styles.price}>
 					Price: <b>{price}</b>
 				</div>

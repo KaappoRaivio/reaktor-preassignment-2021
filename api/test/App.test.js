@@ -6,7 +6,7 @@ const app = require("../src/App");
 const { parseAvailabilityResponse } = require("../src/ProcessData");
 const { API_ENDPOINT } = require("../src/BadApiClient");
 
-const availabilityData = require("./testData/availabilityParseTestData.json");
+const availabilityData = require("./mockRequestData/availabilityParseTestData.json");
 
 describe("Test the API", () => {
 	test("It should respond with an array of categories", done => {
@@ -23,13 +23,13 @@ describe("Test the API", () => {
 	});
 
 	test("It should respond with an object of products", done => {
-		fetchMock.get(`${API_ENDPOINT}/products/gloves`, require("./testData/productsGloves.json"));
-		fetchMock.get(`${API_ENDPOINT}/products/facemasks`, require("./testData/productsFacemasks.json"));
-		fetchMock.get(`${API_ENDPOINT}/products/beanies`, require("./testData/productsBeanies.json"));
+		fetchMock.get(`${API_ENDPOINT}/products/gloves`, require("./mockRequestData/productsGloves.json"));
+		fetchMock.get(`${API_ENDPOINT}/products/facemasks`, require("./mockRequestData/productsFacemasks.json"));
+		fetchMock.get(`${API_ENDPOINT}/products/beanies`, require("./mockRequestData/productsBeanies.json"));
 
-		fetchMock.get(`${API_ENDPOINT}/availability/hennex`, require("./testData/availabilityHennex.json"));
-		fetchMock.get(`${API_ENDPOINT}/availability/ippal`, require("./testData/availabilityIppal.json"));
-		fetchMock.get(`${API_ENDPOINT}/availability/juuran`, require("./testData/availabilityJuuran.json"));
+		fetchMock.get(`${API_ENDPOINT}/availability/hennex`, require("./mockRequestData/availabilityHennex.json"));
+		fetchMock.get(`${API_ENDPOINT}/availability/ippal`, require("./mockRequestData/availabilityIppal.json"));
+		fetchMock.get(`${API_ENDPOINT}/availability/juuran`, require("./mockRequestData/availabilityJuuran.json"));
 
 		supertest(app)
 			.get("/api/products")
@@ -85,7 +85,7 @@ describe("Test the API", () => {
 						).toBeTruthy();
 						expect(Array.isArray(color)).toBeTruthy();
 						expect(loading).toBeFalsy();
-						expect(availability).not.toBeNull();
+						expect(availability).toBeInstanceOf(String);
 						expect(availability).not.toBe("Unknown");
 					}
 				}

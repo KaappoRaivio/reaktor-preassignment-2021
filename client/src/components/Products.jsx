@@ -9,13 +9,15 @@ const Products = ({ products, categories, selectedCategory, amountOfProductsToRe
 	return (
 		<div>
 			<p className={styles.title}>Products</p>
-			<div className={styles.productFlexbox}>
-				{_products.slice(0, Math.min(amountOfProductsToRender, _products.length)).map(product => {
-					return <Product key={product.id} {...product} />;
-				})}
+			<div className={styles.productFlexbox} role={"list"}>
+				{_products.slice(0, Math.min(amountOfProductsToRender, _products.length)).map(product => (
+					<Product key={product.id} {...product} />
+				))}
 			</div>
 			<div className={styles.loadMore}>
-				<button onClick={() => onMoreProductsRequested(100)}>Load more</button>
+				<button disabled={amountOfProductsToRender >= _products.length} onClick={onMoreProductsRequested}>
+					Load more
+				</button>
 			</div>
 		</div>
 	);

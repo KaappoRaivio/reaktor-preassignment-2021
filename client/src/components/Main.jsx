@@ -73,7 +73,7 @@ const useCombinedRequest = (url1, url2) => {
 	return { waiting, JSON, error };
 };
 
-const Main = () => {
+const Main = ({ amountOfProductsToShow, amountOfProductsToIncrease }) => {
 	const categoriesRequest = useRequest(`${API_ENDPOINT}/api/categories`);
 	const productsRequest = useCombinedRequest(
 		`${API_ENDPOINT}/api/products`,
@@ -99,12 +99,12 @@ const Main = () => {
 			history.push(`/category/${categoriesRequest.JSON[index]}`);
 		}
 
-		setAmountOfProductsToRender(100);
+		setAmountOfProductsToRender(amountOfProductsToShow);
 	};
 
-	const [amountOfProductsToRender, setAmountOfProductsToRender] = useState(100);
-	const onMoreProductsRequested = amount => {
-		setAmountOfProductsToRender(amountOfProductsToRender => amountOfProductsToRender + amount);
+	const [amountOfProductsToRender, setAmountOfProductsToRender] = useState(amountOfProductsToShow);
+	const onMoreProductsRequested = () => {
+		setAmountOfProductsToRender(amountOfProductsToRender => amountOfProductsToRender + amountOfProductsToIncrease);
 	};
 
 	if (categoriesRequest.waiting) {

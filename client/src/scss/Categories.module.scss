@@ -9,16 +9,23 @@
     border-radius: 3px;
     padding: $category-padding;
     background-color: $background-color;
+	width: 100%;
+	text-align: left;
+
 
     transition: background-color 0.15s linear;
 }
 
-.selected {
-	background-color: darken($background-color, 10%);
-}
-
 .category:hover {
     background-color: darken($background-color, 10%);
+}
+
+.category:active {
+	background-color: darken($background-color, 20%);
+}
+
+.selected {
+	background-color: darken($background-color, 10%);
 }
 
 .categories {

@@ -10,13 +10,13 @@ const Categories = ({ categories, onCategoryClicked, selectedCategory }) => {
 			<p className={styles.title}>Categories</p>
 			<div className={styles.categories}>
 				{categories.map((category, index) => (
-					<div
+					<button
 						data-testid={"category"}
 						key={category}
 						onClick={() => onCategoryClicked(index)}
 						className={`${styles.category} ${selectedCategory === index ? styles.selected : ""}`}>
 						{category}
-					</div>
+					</button>
 				))}
 			</div>
 		</div>
