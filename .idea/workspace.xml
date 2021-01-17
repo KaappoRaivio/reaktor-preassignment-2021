@@ -11,24 +11,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77dc3b20-1a00-4828-8770-a80017687325" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/test/TestUtils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/test/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/test/App.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/test/testData/availabilityHennex.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/test/mockRequestData/availabilityHennex.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/test/testData/availabilityIppal.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/test/mockRequestData/availabilityIppal.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/test/testData/availabilityJuuran.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/test/mockRequestData/availabilityJuuran.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/test/testData/availabilityParseTestData.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/test/mockRequestData/availabilityParseTestData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/test/testData/productsBeanies.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/test/mockRequestData/productsBeanies.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/test/testData/productsFacemasks.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/test/mockRequestData/productsFacemasks.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/test/testData/productsGloves.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/test/mockRequestData/productsGloves.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Categories.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Categories.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Product.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Product.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Products.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Products.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/scss/Categories.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/scss/Categories.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/scss/Products.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/scss/Products.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/test/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/test/App.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/test/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/test/App.test.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +27,7 @@
     <option name="done" value="true" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="70650" />
+    <option name="totalTimeSeconds" value="75421" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -129,7 +117,7 @@
       <workItem from="1610456204831" duration="1334000" />
       <workItem from="1610483537388" duration="71600000" />
       <workItem from="1610830600191" duration="1230000" />
-      <workItem from="1610874164519" duration="4737000" />
+      <workItem from="1610874164519" duration="10070000" />
     </task>
     <servers />
   </component>
