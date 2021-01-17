@@ -20,7 +20,11 @@ const cache = duration => (req, res, next) => {
 	}
 };
 
-app.use(cache(300));
+// app.use(cache(300));
+app.use((req, res, next) => {
+	req.connection.setTimeout(1000*60)Map;
+	next();
+})
 app.use((err, req, res, next) => {
 	res.status(500);
 	res.render("error", { error: err });
