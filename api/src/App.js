@@ -1,7 +1,7 @@
 const express = require("express");
 const memoryCache = require("memory-cache");
 const API = require("./API.js");
-
+var timeout = require("connect-timeout");
 const app = express();
 
 const cache = duration => (req, res, next) => {
@@ -21,10 +21,7 @@ const cache = duration => (req, res, next) => {
 };
 
 // app.use(cache(300));
-app.use((req, res, next) => {
-	req.connection.setTimeout(1000 * 60);
-	next();
-});
+app.use(timeout("60s"));
 app.use((err, req, res, next) => {
 	res.status(500);
 	res.render("error", { error: err });
