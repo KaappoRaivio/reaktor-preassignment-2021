@@ -8,11 +8,7 @@ import MyErrorBoundary from "./components/MyErrorBoundary";
 
 ReactDOM.render(
 	<React.StrictMode>
-		<BrowserRouter>
-			<MyErrorBoundary>
-				<App />
-			</MyErrorBoundary>
-		</BrowserRouter>
+		<App />
 	</React.StrictMode>,
 	document.getElementById("root")
 );

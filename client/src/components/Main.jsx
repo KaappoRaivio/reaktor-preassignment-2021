@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 
 import { useHistory, useParams } from "react-router-dom";
 import MyErrorBoundary from "./MyErrorBoundary";
+import Error from "./Error";
 
 const IS_DEVELOPMENT_ENVIRONMENT = !process.env.NODE_ENV || process.env.NODE_ENV === "development";
 const API_ENDPOINT = IS_DEVELOPMENT_ENVIRONMENT ? "http://localhost:5000" : "";
@@ -13,21 +14,30 @@ const useRequest = url => {
 	const [waiting, setWaiting] = useState(true);
 	const [JSON, setJSON] = useState(null);
 	const [error, setError] = useState(null);
+
+	const [didCancel, setDidCancel] = useState(false);
+
 	useEffect(() => {
 		const fetchData = async () => {
 			const response = await fetch(url);
-			if (response.status < 200 || response.status >= 300) {
-				setError({ status: response.status, error: response.statusText });
-				setWaiting(false);
-				return;
-			}
+			if (!didCancel) {
+				if (response.status < 200 || response.status >= 300) {
+					setError({ status: response.status, error: response.statusText });
+					setWaiting(false);
+					return;
+				}
 
-			const JSON = await response.json();
-			setJSON(JSON);
-			setWaiting(false);
+				const JSON = await response.json();
+				setJSON(JSON);
+				setWaiting(false);
+			}
 		};
 		fetchData();
-	}, [url]);
+
+		return () => {
+			setDidCancel(true);
+		};
+	}, [url, didCancel]);
 
 	return { waiting, JSON, error };
 };
@@ -65,10 +75,6 @@ const useCombinedRequest = (url1, url2) => {
 
 const Main = () => {
 	const categoriesRequest = useRequest(`${API_ENDPOINT}/api/categories`);
-	if (categoriesRequest.error) {
-		return <div>Error retrieving product categories: {categoriesRequest.error.error}</div>;
-	}
-
 	const productsRequest = useCombinedRequest(
 		`${API_ENDPOINT}/api/products`,
 		`${API_ENDPOINT}/api/products?withAvailability=true`
@@ -92,36 +98,47 @@ const Main = () => {
 		if (!categoriesRequest.waiting) {
 			history.push(`/category/${categoriesRequest.JSON[index]}`);
 		}
+
+		setAmountOfProductsToRender(100);
 	};
 
-	const onMoreProductsRequested = amount => {};
+	const [amountOfProductsToRender, setAmountOfProductsToRender] = useState(100);
+	const onMoreProductsRequested = amount => {
+		setAmountOfProductsToRender(amountOfProductsToRender => amountOfProductsToRender + amount);
+	};
+
+	if (categoriesRequest.waiting) {
+		return <div>Loading product categories</div>;
+	}
+	if (categoriesRequest.error) {
+		return <Error />;
+	}
 
 	return (
 		<div className={styles.columnContainer}>
 			<div className={styles.categories}>
 				<MyErrorBoundary>
 					<Categories
-						categories={categoriesRequest}
+						categories={categoriesRequest.JSON}
 						onCategoryClicked={onCategoryClicked}
 						selectedCategory={selectedCategoryIndex}
 					/>
 				</MyErrorBoundary>
 			</div>
 			<div className={styles.products}>
-				{!categoriesRequest.waiting ? (
-					productsRequest.error ? (
-						<div>Something went wrong</div>
-					) : (
-						<MyErrorBoundary>
-							<Products
-								loadingProducts={productsRequest.waiting}
-								categories={categoriesRequest.JSON}
-								products={productsRequest.JSON?.products}
-								selectedCategory={selectedCategoryIndex}
-							/>
-						</MyErrorBoundary>
-					)
-				) : null}
+				{productsRequest.waiting ? (
+					<div>Loading products</div>
+				) : (
+					<MyErrorBoundary>
+						<Products
+							categories={categoriesRequest.JSON}
+							products={productsRequest.JSON.products}
+							selectedCategory={selectedCategoryIndex}
+							onMoreProductsRequested={onMoreProductsRequested}
+							amountOfProductsToRender={amountOfProductsToRender}
+						/>
+					</MyErrorBoundary>
+				)}
 			</div>
 		</div>
 	);

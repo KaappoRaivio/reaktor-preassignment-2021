@@ -1,0 +1,406 @@
+{
+	"products": {
+		"gloves": [
+			{
+				"id": "438dc024f17e98a6cf2d",
+				"type": "gloves",
+				"name": "UPMOFOL ALPINE ANIMAL",
+				"color": ["purple"],
+				"price": 13,
+				"manufacturer": "ippal",
+				"availability": {
+					"loading": false,
+					"availability": "In stock"
+				}
+			},
+			{
+				"id": "8deaa116a4f3614dba65004",
+				"type": "gloves",
+				"name": "TAIOOTÖIS WIND",
+				"color": ["purple"],
+				"price": 18,
+				"manufacturer": "juuran",
+				"availability": {
+					"loading": false,
+					"availability": "In stock"
+				}
+			},
+			{
+				"id": "d0712d9effd2f605acd19",
+				"type": "gloves",
+				"name": "UPSOPEM LIGHT",
+				"color": ["yellow"],
+				"price": 52,
+				"manufacturer": "okkau",
+				"availability": {
+					"loading": false,
+					"availability": "In stock"
+				}
+			},
+			{
+				"id": "1fbc060796c9e088c94a7cd",
+				"type": "gloves",
+				"name": "SOPVETAI FANTASY",
+				"color": ["black"],
+				"price": 87,
+				"manufacturer": "okkau",
+				"availability": {
+					"loading": false,
+					"availability": "In stock"
+				}
+			},
+			{
+				"id": "3caa990e1ae597feff058379",
+				"type": "gloves",
+				"name": "SOPAKKOL SHINE",
+				"color": ["red"],
+				"price": 41,
+				"manufacturer": "hennex",
+				"availability": {
+					"loading": false,
+					"availability": "In stock"
+				}
+			},
+			{
+				"id": "9917ed7fcfb7bdde3d263274",
+				"type": "gloves",
+				"name": "YYIL EARTH BRIGHT",
+				"color": ["yellow"],
+				"price": 60,
+				"manufacturer": "juuran",
+				"availability": {
+					"loading": false,
+					"availability": "In stock"
+				}
+			},
+			{
+				"id": "4e6eb8446a94a711a90ace",
+				"type": "gloves",
+				"name": "ÄNUPVE TYRANNUS",
+				"color": ["grey"],
+				"price": 46,
+				"manufacturer": "okkau",
+				"availability": {
+					"loading": false,
+					"availability": "In stock"
+				}
+			},
+			{
+				"id": "aa05bf4fcaaa0308e800f0",
+				"type": "gloves",
+				"name": "VEILFOL GREEN MULTI",
+				"color": ["black"],
+				"price": 67,
+				"manufacturer": "ippal",
+				"availability": {
+					"loading": false,
+					"availability": "In stock"
+				}
+			},
+			{
+				"id": "8b0ad6a7b087c4e3f6c61cc",
+				"type": "gloves",
+				"name": "REVÖIS FANTASY",
+				"color": ["red"],
+				"price": 837,
+				"manufacturer": "okkau",
+				"availability": {
+					"loading": false,
+					"availability": "In stock"
+				}
+			},
+			{
+				"id": "0c6e4bd0501908f9af642ba7",
+				"type": "gloves",
+				"name": "NYLEATAI FANTASY FLOWER",
+				"color": ["purple"],
+				"price": 65,
+				"manufacturer": "umpante",
+				"availability": {
+					"loading": false,
+					"availability": "In stock"
+				}
+			},
+			{
+				"id": "4fefc395fb3a48b2ea985a49",
+				"type": "gloves",
+				"name": "UPTAI TYRANNUS",
+				"color": ["white"],
+				"price": 21,
+				"manufacturer": "ippal",
+				"availability": {
+					"loading": false,
+					"availability": "In stock"
+				}
+			}
+		],
+		"facemasks": [
+			{
+				"id": "ba27fb50344f309e0ce328b",
+				"type": "facemasks",
+				"name": "MOJEKOL TYRANNUS",
+				"color": ["purple"],
+				"price": 13,
+				"manufacturer": "abiplos",
+				"availability": {
+					"loading": false,
+					"availability": "In stock"
+				}
+			},
+			{
+				"id": "4e09704f206a005909",
+				"type": "facemasks",
+				"name": "OOTFOLVE BOON CITY",
+				"color": ["purple"],
+				"price": 33,
+				"manufacturer": "abiplos",
+				"availability": {
+					"loading": false,
+					"availability": "In stock"
+				}
+			},
+			{
+				"id": "e0785f92ce5f9157cf",
+				"type": "facemasks",
+				"name": "JESOPKOL SWEET SHINE",
+				"color": ["yellow"],
+				"price": 93,
+				"manufacturer": "hennex",
+				"availability": {
+					"loading": false,
+					"availability": "In stock"
+				}
+			},
+			{
+				"id": "bd99c88c09c8109cf5e2de3d",
+				"type": "facemasks",
+				"name": "UPKOL RAPTOR",
+				"color": ["blue"],
+				"price": 75,
+				"manufacturer": "juuran",
+				"availability": {
+					"loading": false,
+					"availability": "In stock"
+				}
+			},
+			{
+				"id": "dee1275a94d3aa486a5",
+				"type": "facemasks",
+				"name": "UPMOREV STAR HYDRA",
+				"color": ["white", "yellow"],
+				"price": 38,
+				"manufacturer": "juuran",
+				"availability": {
+					"loading": false,
+					"availability": "In stock"
+				}
+			},
+			{
+				"id": "f79cb4300b79700b4f06632",
+				"type": "facemasks",
+				"name": "DALFOLIL HYDRA",
+				"color": ["purple"],
+				"price": 14,
+				"manufacturer": "hennex",
+				"availability": {
+					"loading": false,
+					"availability": "In stock"
+				}
+			},
+			{
+				"id": "af193a2b03dca2783e7",
+				"type": "facemasks",
+				"name": "JEHEM BOON",
+				"color": ["grey"],
+				"price": 63,
+				"manufacturer": "juuran",
+				"availability": {
+					"loading": false,
+					"availability": "In stock"
+				}
+			},
+			{
+				"id": "e5004bd0b6d47def827f83b1",
+				"type": "facemasks",
+				"name": "VEJESOP FANTASY TYRANNUS",
+				"color": ["white"],
+				"price": 23,
+				"manufacturer": "hennex",
+				"availability": {
+					"loading": false,
+					"availability": "In stock"
+				}
+			},
+			{
+				"id": "db372c4523334a7f1ef",
+				"type": "facemasks",
+				"name": "DALVEREV FLOWER",
+				"color": ["red"],
+				"price": 33,
+				"manufacturer": "juuran",
+				"availability": {
+					"loading": false,
+					"availability": "In stock"
+				}
+			},
+			{
+				"id": "22fedd226fa66d5076eb0ee2",
+				"type": "facemasks",
+				"name": "REVKOLSOP JUMP",
+				"color": ["yellow"],
+				"price": 65,
+				"manufacturer": "ippal",
+				"availability": {
+					"loading": false,
+					"availability": "In stock"
+				}
+			},
+			{
+				"id": "a07b6d2b2e652f21f09",
+				"type": "facemasks",
+				"name": "KOLTAIHEM BOON",
+				"color": ["grey"],
+				"price": 15,
+				"manufacturer": "umpante",
+				"availability": {
+					"loading": false,
+					"availability": "In stock"
+				}
+			}
+		],
+		"beanies": [
+			{
+				"id": "6aa2f8987949902d16dc63",
+				"type": "beanies",
+				"name": "ILREVKOL SWEET METROPOLIS",
+				"color": ["red"],
+				"price": 24,
+				"manufacturer": "umpante",
+				"availability": {
+					"loading": false,
+					"availability": "In stock"
+				}
+			},
+			{
+				"id": "ee7a422e614602913c80571",
+				"type": "beanies",
+				"name": "SOPMOAK STAR",
+				"color": ["white", "red"],
+				"price": 62,
+				"manufacturer": "umpante",
+				"availability": {
+					"loading": false,
+					"availability": "In stock"
+				}
+			},
+			{
+				"id": "0331ba71197fa01f773",
+				"type": "beanies",
+				"name": "KOLHEM MAGIC",
+				"color": ["white"],
+				"price": 29,
+				"manufacturer": "abiplos",
+				"availability": {
+					"loading": false,
+					"availability": "In stock"
+				}
+			},
+			{
+				"id": "5cd87efe67d0193ccd1",
+				"type": "beanies",
+				"name": "NYLEAKOL BRIGHT FANTASY",
+				"color": ["black"],
+				"price": 829,
+				"manufacturer": "juuran",
+				"availability": {
+					"loading": false,
+					"availability": "In stock"
+				}
+			},
+			{
+				"id": "37212e55dcca33afb6",
+				"type": "beanies",
+				"name": "ÖISUPIL HYDRA",
+				"color": ["yellow"],
+				"price": 755,
+				"manufacturer": "juuran",
+				"availability": {
+					"loading": false,
+					"availability": "In stock"
+				}
+			},
+			{
+				"id": "d2d030d0db46f8511ede",
+				"type": "beanies",
+				"name": "OOTEMKOL FANTASY LIGHT",
+				"color": ["purple", "green"],
+				"price": 69,
+				"manufacturer": "hennex",
+				"availability": {
+					"loading": false,
+					"availability": "In stock"
+				}
+			},
+			{
+				"id": "528956df7c1cdf3d7a1d0a",
+				"type": "beanies",
+				"name": "FOLTAIGIN BRIGHT",
+				"color": ["white"],
+				"price": 24,
+				"manufacturer": "ippal",
+				"availability": {
+					"loading": false,
+					"availability": "In stock"
+				}
+			},
+			{
+				"id": "426a628d32b7ee8cfa",
+				"type": "beanies",
+				"name": "FOLSOPJE CITY",
+				"color": ["black"],
+				"price": 41,
+				"manufacturer": "abiplos",
+				"availability": {
+					"loading": false,
+					"availability": "In stock"
+				}
+			},
+			{
+				"id": "34051935f8c799cdcbcb2",
+				"type": "beanies",
+				"name": "FOLNY HYDRA",
+				"color": ["purple"],
+				"price": 43,
+				"manufacturer": "juuran",
+				"availability": {
+					"loading": false,
+					"availability": "In stock"
+				}
+			},
+			{
+				"id": "4d4d7bb0b0e77a84cb96603b",
+				"type": "beanies",
+				"name": "ILHEMYY SWEET",
+				"color": ["purple"],
+				"price": 53,
+				"manufacturer": "okkau",
+				"availability": {
+					"loading": false,
+					"availability": "In stock"
+				}
+			},
+			{
+				"id": "1af183c7f9214b4383",
+				"type": "beanies",
+				"name": "FOLOOTUP NORMAL",
+				"color": ["purple"],
+				"price": 13,
+				"manufacturer": "umpante",
+				"availability": {
+					"loading": false,
+					"availability": "In stock"
+				}
+			}
+		]
+	}
+}

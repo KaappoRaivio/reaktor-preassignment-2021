@@ -4,7 +4,7 @@ import Color from "./Color";
 
 import PropTypes from "prop-types";
 
-const Product = ({ name, id, price, manufacturer, availability, color }) => {
+const Product = ({ name, type, id, price, manufacturer, availability, color }) => {
 	let grayOut = false;
 
 	let availabilityElement;
@@ -15,7 +15,7 @@ const Product = ({ name, id, price, manufacturer, availability, color }) => {
 	}
 
 	return (
-		<div className={styles.product} key={id}>
+		<div className={styles.product} key={id} data-testid={`product-${type}`}>
 			<div className={styles.content}>
 				<div className={styles.name}>{name}</div>
 				<div className={styles.manufacturer}>{manufacturer}</div>
@@ -37,6 +37,7 @@ Product.propTypes = {
 	name: PropTypes.string.isRequired,
 	id: PropTypes.string.isRequired,
 	price: PropTypes.number.isRequired,
+	type: PropTypes.string.isRequired,
 	manufacturer: PropTypes.string.isRequired,
 	availability: PropTypes.shape({ loading: PropTypes.bool.isRequired, availability: PropTypes.string }).isRequired,
 	color: PropTypes.arrayOf(PropTypes.string).isRequired,

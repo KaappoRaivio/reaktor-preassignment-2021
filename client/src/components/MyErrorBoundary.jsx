@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Error from "./Error";
 
 class MyErrorBoundary extends Component {
 	static propTypes = {};
@@ -17,7 +18,7 @@ class MyErrorBoundary extends Component {
 		const { children } = this.props;
 		const { hasError } = this.state;
 
-		return hasError ? <div>Something went wrong</div> : children;
+		return hasError ? <Error /> : children;
 	}
 }
 
