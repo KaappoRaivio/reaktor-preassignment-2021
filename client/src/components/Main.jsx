@@ -1,7 +1,7 @@
 import styles from "../scss/Main.module.scss";
 import Categories from "./Categories";
 import Products from "./Products";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { useHistory, useParams } from "react-router-dom";
 import MyErrorBoundary from "./MyErrorBoundary";
@@ -73,12 +73,58 @@ const useCombinedRequest = (url1, url2) => {
 	return { waiting, JSON, error };
 };
 
+const useInterval = (callback, delay) => {
+	const savedCallback = useRef();
+	useEffect(() => {
+		savedCallback.current = callback;
+	}, [callback]);
+
+	useEffect(() => {
+		const tick = () => savedCallback.current();
+
+		if (delay != null) {
+			const id = setInterval(tick, delay);
+			return () => clearInterval(id);
+		}
+	}, [callback, delay]);
+};
+
+const usePollingRequest = pollingInitialisationURL => {
+	const { waiting: pollingInitialisationRequestWaiting, JSON, error } = useRequest(pollingInitialisationURL);
+	const [UUID, setUUID] = useState(null);
+	const [finished, setFinished] = useState(false);
+	const [data, setData] = useState(null);
+
+	if (!pollingInitialisationRequestWaiting && UUID == null) {
+		setUUID(JSON.uuid);
+	}
+
+	useInterval(
+		async () => {
+			if (UUID) {
+				const response = await fetch(`${API_ENDPOINT}/api/jobs/${UUID}`);
+				const { finished, hasNewData, data } = await response.json();
+				console.log(finished, hasNewData, data);
+				setFinished(finished);
+
+				if (hasNewData) {
+					setData(data);
+				}
+			}
+		},
+		finished ? null : 1000
+	);
+
+	return { waiting: data == null, JSON: data, error: null };
+};
+
 const Main = ({ amountOfProductsToShow, amountOfProductsToIncrease }) => {
 	const categoriesRequest = useRequest(`${API_ENDPOINT}/api/categories`);
-	const productsRequest = useCombinedRequest(
-		`${API_ENDPOINT}/api/products`,
-		`${API_ENDPOINT}/api/products?withAvailability=true`
-	);
+	// const productsRequest = useCombinedRequest(
+	// 	`${API_ENDPOINT}/api/products`,
+	// 	`${API_ENDPOINT}/api/products?withAvailability=true`
+	// );
+	const productsRequest = usePollingRequest(`${API_ENDPOINT}/api/products`);
 
 	const history = useHistory();
 	const [selectedCategoryIndex, setSelectedCategoryIndex] = useState(0);
@@ -132,7 +178,7 @@ const Main = ({ amountOfProductsToShow, amountOfProductsToIncrease }) => {
 					<MyErrorBoundary>
 						<Products
 							categories={categoriesRequest.JSON}
-							products={productsRequest.JSON.products}
+							products={productsRequest.JSON}
 							selectedCategory={selectedCategoryIndex}
 							onMoreProductsRequested={onMoreProductsRequested}
 							amountOfProductsToRender={amountOfProductsToRender}

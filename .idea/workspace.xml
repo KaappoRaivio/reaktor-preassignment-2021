@@ -12,7 +12,10 @@
   <component name="ChangeListManager">
     <list default="true" id="77dc3b20-1a00-4828-8770-a80017687325" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/API.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/BadApiClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/BadApiClient.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/ProcessData.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/ProcessData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Main.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +26,7 @@
     <option name="done" value="true" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="76804" />
+    <option name="totalTimeSeconds" value="81977" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -55,7 +58,7 @@
     <property name="javascript.nodejs.core.library.typings.version" value="12.19.13" />
     <property name="js.last.introduce.type" value="CONST" />
     <property name="last.edited.regexp" value="load more" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../nettisivut" />
+    <property name="last_opened_file_path" value="$USER_HOME$/testit/kirja" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -80,19 +83,6 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -113,7 +103,8 @@
       <workItem from="1610456204831" duration="1334000" />
       <workItem from="1610483537388" duration="71600000" />
       <workItem from="1610830600191" duration="1230000" />
-      <workItem from="1610874164519" duration="11991000" />
+      <workItem from="1610874164519" duration="12705000" />
+      <workItem from="1610969316900" duration="6416000" />
     </task>
     <servers />
   </component>
@@ -133,6 +124,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1577" y="761" width="732" height="644" key="#Inspections" timestamp="1610972261541">
+      <screen x="926" y="0" width="2914" height="2160" />
+    </state>
+    <state x="1577" y="761" width="732" height="644" key="#Inspections/870.2160.1920.1080/926.0.2914.2160@926.0.2914.2160" timestamp="1610972261541" />
     <state x="3645" y="0" width="625" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1610704362520">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
@@ -173,12 +168,13 @@
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2918" y="459" width="620" height="522" key="find.popup/56.387.1864.1053/1920.0.2560.1440@1920.0.2560.1440" timestamp="1610705634406" />
-    <state x="2892" y="335" key="run.anything.popup" timestamp="1610702318853">
-      <screen x="1920" y="0" width="2560" height="1440" />
+    <state x="2032" y="503" key="run.anything.popup" timestamp="1610970291310">
+      <screen x="926" y="0" width="2914" height="2160" />
     </state>
     <state x="2892" y="335" key="run.anything.popup/0.1080.1920.1080/56.387.1864.693@0.1080.1920.1080" timestamp="1610397410622" />
     <state x="2558" y="515" key="run.anything.popup/0.1080.1920.1080/891.0.1029.1080@0.1080.1920.1080" timestamp="1610278765489" />
     <state x="2892" y="335" key="run.anything.popup/56.387.1864.1053/1920.0.2560.1440@1920.0.2560.1440" timestamp="1610702318853" />
+    <state x="2032" y="503" key="run.anything.popup/870.2160.1920.1080/926.0.2914.2160@926.0.2914.2160" timestamp="1610970291310" />
     <state x="3361" y="340" width="896" height="452" key="search.everywhere.popup" timestamp="1610715015218">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>

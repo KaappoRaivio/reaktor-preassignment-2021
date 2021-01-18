@@ -47,18 +47,34 @@ const getProducts = async () => {
 	return addAvailabilityToProductInformation(products);
 };
 
-const getProductsAndAvailability = async products => {
+const getAvailabilityRequests = products => {
 	const manufacturers = getManufacturers(products);
 
+	let counter = 0;
+
 	const availabilityRequests = manufacturers.map(getAvailability);
-	const availabilityResponses = await Promise.all(availabilityRequests);
+	const map = availabilityRequests.map(availabilityRequest =>
+		availabilityRequest.then(availabilityData => {
+			counter += 1;
 
-	let availability = {};
-	for (const response of availabilityResponses) {
-		availability = { ...availability, ...response };
-	}
+			let isLastRequest = counter === manufacturers.length;
+			return { availabilityData, isLastRequest };
+		})
+	);
+	console.log(map instanceof Array);
+	return map;
+	// return availabilityRequests.map(availability => _products => {
+	// 	return combineAvailabilityWithProductInformation(_products, availability)
+	// })
 
-	return combineAvailabilityWithProductInformation(products, availability);
+	// const availabilityResponses = await Promise.all(availabilityRequests);
+
+	// let availability = {};
+	// for (const response of availabilityResponses) {
+	// 	availability = { ...availability, ...response };
+	// }
+	//
+	// return combineAvailabilityWithProductInformation(products, availability);
 };
 
-module.exports = { getProducts, getProductsAndAvailability, PRODUCT_CATEGORIES, API_ENDPOINT };
+module.exports = { getProducts, getAvailabilityRequests, PRODUCT_CATEGORIES, API_ENDPOINT };

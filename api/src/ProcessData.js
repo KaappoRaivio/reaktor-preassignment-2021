@@ -45,15 +45,22 @@ const addAvailabilityToProductInformation = products => {
 	return result;
 };
 
-const combineAvailabilityWithProductInformation = (products, availability) => {
+const combineAvailabilityWithProductInformation = (products, availabilityData) => {
 	const result = {};
 
 	for (const category in products) {
 		result[category] = [];
 		for (const product of products[category]) {
+			let availability;
+			if (availabilityData[product.id]) {
+				availability = { loading: false, availability: availabilityData[product.id] };
+			} else {
+				availability = { loading: true, availability: "Loading" };
+			}
+
 			result[category].push({
 				...product,
-				availability: { loading: false, availability: availability[product.id] || "No information" },
+				availability,
 			});
 		}
 	}
