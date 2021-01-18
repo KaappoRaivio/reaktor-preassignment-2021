@@ -13,9 +13,15 @@
     <list default="true" id="77dc3b20-1a00-4828-8770-a80017687325" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/API.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/BadApiClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/BadApiClient.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/ProcessData.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/ProcessData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/test/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/test/App.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/test/mockRequestData/availabilityHennex.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/test/mockRequestData/availabilityHennex.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/test/mockRequestData/availabilityIppal.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/test/mockRequestData/availabilityIppal.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/test/mockRequestData/availabilityJuuran.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/test/mockRequestData/availabilityJuuran.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +32,7 @@
     <option name="done" value="true" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="81977" />
+    <option name="totalTimeSeconds" value="86049" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -83,6 +89,21 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -104,7 +125,7 @@
       <workItem from="1610483537388" duration="71600000" />
       <workItem from="1610830600191" duration="1230000" />
       <workItem from="1610874164519" duration="12705000" />
-      <workItem from="1610969316900" duration="6416000" />
+      <workItem from="1610969316900" duration="11550000" />
     </task>
     <servers />
   </component>
@@ -160,6 +181,10 @@
     <state x="724" y="1416" width="1196" height="744" key="SettingsEditor/0.1080.1920.1080/926.0.994.1080@0.1080.1920.1080" timestamp="1610367997482" />
     <state x="2885" y="448" key="SettingsEditor/56.387.1864.1053/1920.0.2560.1440@1920.0.2560.1440" timestamp="1610452458678" />
     <state x="2378" y="715" width="1022" height="737" key="SettingsEditor/835.2160.1920.1080/891.0.2949.2160@891.0.2949.2160" timestamp="1610286129950" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1610980077895">
+      <screen x="926" y="0" width="2914" height="2160" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/870.2160.1920.1080/926.0.2914.2160@926.0.2914.2160" timestamp="1610980077895" />
     <state x="489" y="1983" width="437" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1610306900202">
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
@@ -175,12 +200,13 @@
     <state x="2558" y="515" key="run.anything.popup/0.1080.1920.1080/891.0.1029.1080@0.1080.1920.1080" timestamp="1610278765489" />
     <state x="2892" y="335" key="run.anything.popup/56.387.1864.1053/1920.0.2560.1440@1920.0.2560.1440" timestamp="1610702318853" />
     <state x="2032" y="503" key="run.anything.popup/870.2160.1920.1080/926.0.2914.2160@926.0.2914.2160" timestamp="1610970291310" />
-    <state x="3361" y="340" width="896" height="452" key="search.everywhere.popup" timestamp="1610715015218">
-      <screen x="1920" y="0" width="2560" height="1440" />
+    <state x="2566" y="510" width="1020" height="678" key="search.everywhere.popup" timestamp="1610979788455">
+      <screen x="926" y="0" width="2914" height="2160" />
     </state>
     <state x="2557" y="401" width="672" height="678" key="search.everywhere.popup/0.1080.1920.1080/891.0.1029.1080@0.1080.1920.1080" timestamp="1610280607051" />
     <state x="1081" y="1335" width="672" height="339" key="search.everywhere.popup/0.1080.1920.1080/926.0.994.1080@0.1080.1920.1080" timestamp="1610367985971" />
     <state x="3361" y="340" width="896" height="452" key="search.everywhere.popup/56.387.1864.1053/1920.0.2560.1440@1920.0.2560.1440" timestamp="1610715015218" />
     <state x="2552" y="509" width="672" height="678" key="search.everywhere.popup/835.2160.1920.1080/891.0.2949.2160@891.0.2949.2160" timestamp="1610280672067" />
+    <state x="2566" y="510" width="1020" height="678" key="search.everywhere.popup/870.2160.1920.1080/926.0.2914.2160@926.0.2914.2160" timestamp="1610979788455" />
   </component>
 </project>

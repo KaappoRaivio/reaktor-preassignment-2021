@@ -4,24 +4,22 @@ const API = require("./API.js");
 var timeout = require("connect-timeout");
 const app = express();
 
-const cache = duration => (req, res, next) => {
-	const key = "__express__" + req.originalUrl || req.url;
-	const cachedBody = memoryCache.get(key);
+// const cache = duration => (req, res, next) => {
+// 	const key = "__express__" + req.originalUrl || req.url;
+// 	const cachedBody = memoryCache.get(key);
+//
+// 	if (cachedBody) {
+// 		res.send(cachedBody);
+// 	} else {
+// 		res.sendResponse = res.send;
+// 		res.send = body => {
+// 			memoryCache.put(key, body, duration * 1000);
+// 			res.sendResponse(body);
+// 		};
+// 		next();
+// 	}
+// };
 
-	if (cachedBody) {
-		res.send(cachedBody);
-	} else {
-		res.sendResponse = res.send;
-		res.send = body => {
-			memoryCache.put(key, body, duration * 1000);
-			res.sendResponse(body);
-		};
-		next();
-	}
-};
-
-// app.use(cache(300));
-app.use(timeout("60s"));
 app.use((err, req, res, next) => {
 	res.status(500);
 	res.render("error", { error: err });

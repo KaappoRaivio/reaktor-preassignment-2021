@@ -53,7 +53,7 @@ const getAvailabilityRequests = products => {
 	let counter = 0;
 
 	const availabilityRequests = manufacturers.map(getAvailability);
-	const map = availabilityRequests.map(availabilityRequest =>
+	return availabilityRequests.map(availabilityRequest =>
 		availabilityRequest.then(availabilityData => {
 			counter += 1;
 
@@ -61,8 +61,6 @@ const getAvailabilityRequests = products => {
 			return { availabilityData, isLastRequest };
 		})
 	);
-	console.log(map instanceof Array);
-	return map;
 	// return availabilityRequests.map(availability => _products => {
 	// 	return combineAvailabilityWithProductInformation(_products, availability)
 	// })

@@ -10,7 +10,8 @@ import Error from "./Error";
 const IS_DEVELOPMENT_ENVIRONMENT = !process.env.NODE_ENV || process.env.NODE_ENV === "development";
 const API_ENDPOINT = IS_DEVELOPMENT_ENVIRONMENT ? "http://localhost:5000" : "";
 
-const useRequest = url => {
+const useRequest = (url, { retries = 3 } = {}) => {
+	const [retriesLeft, setRetriesLeft] = useState(retries);
 	const [waiting, setWaiting] = useState(true);
 	const [JSON, setJSON] = useState(null);
 	const [error, setError] = useState(null);
@@ -22,9 +23,14 @@ const useRequest = url => {
 			const response = await fetch(url);
 			if (!didCancel) {
 				if (response.status < 200 || response.status >= 300) {
-					setError({ status: response.status, error: response.statusText });
-					setWaiting(false);
-					return;
+					if (retriesLeft > 0) {
+						setRetriesLeft(retriesLeft => retriesLeft - 1);
+						return fetchData();
+					} else {
+						setError({ status: response.status, error: response.statusText });
+						setWaiting(false);
+						return;
+					}
 				}
 
 				const JSON = await response.json();
@@ -37,38 +43,7 @@ const useRequest = url => {
 		return () => {
 			setDidCancel(true);
 		};
-	}, [url, didCancel]);
-
-	return { waiting, JSON, error };
-};
-
-const useCombinedRequest = (url1, url2) => {
-	const request1 = useRequest(url1);
-	const request2 = useRequest(url2);
-
-	const [waiting, setWaiting] = useState(true);
-	const [bothRequestsComplete, setBothRequestsComplete] = useState(false);
-	const [JSON, setJSON] = useState(null);
-	const [error, setError] = useState(null);
-
-	if (request1.error && waiting) {
-		setError(request1.error);
-		setWaiting(false);
-	}
-	if (request2.error && waiting) {
-		setError(request2.error);
-		setWaiting(false);
-	}
-
-	if (!request1.waiting && request2.waiting && waiting) {
-		setJSON(request1.JSON);
-		setWaiting(false);
-	}
-	if (!request2.waiting && !bothRequestsComplete) {
-		setJSON(request2.JSON);
-		setBothRequestsComplete(true);
-		setWaiting(false);
-	}
+	}, [url, didCancel, retriesLeft]);
 
 	return { waiting, JSON, error };
 };
@@ -90,12 +65,15 @@ const useInterval = (callback, delay) => {
 };
 
 const usePollingRequest = pollingInitialisationURL => {
-	const { waiting: pollingInitialisationRequestWaiting, JSON, error } = useRequest(pollingInitialisationURL);
+	const { waiting: pollingInitialisationWaiting, JSON, error: pollingInitializationError } = useRequest(
+		pollingInitialisationURL
+	);
 	const [UUID, setUUID] = useState(null);
 	const [finished, setFinished] = useState(false);
 	const [data, setData] = useState(null);
+	const [error, setError] = useState(null);
 
-	if (!pollingInitialisationRequestWaiting && UUID == null) {
+	if (!pollingInitialisationWaiting && UUID == null) {
 		setUUID(JSON.uuid);
 	}
 
@@ -103,8 +81,11 @@ const usePollingRequest = pollingInitialisationURL => {
 		async () => {
 			if (UUID) {
 				const response = await fetch(`${API_ENDPOINT}/api/jobs/${UUID}`);
+				if (response.status < 200 || response.status >= 300) {
+					return;
+				}
 				const { finished, hasNewData, data } = await response.json();
-				console.log(finished, hasNewData, data);
+				// console.log(finished, hasNewData, data);
 				setFinished(finished);
 
 				if (hasNewData) {
@@ -115,15 +96,11 @@ const usePollingRequest = pollingInitialisationURL => {
 		finished ? null : 1000
 	);
 
-	return { waiting: data == null, JSON: data, error: null };
+	return { waiting: data == null, JSON: data, error: error || pollingInitializationError };
 };
 
 const Main = ({ amountOfProductsToShow, amountOfProductsToIncrease }) => {
 	const categoriesRequest = useRequest(`${API_ENDPOINT}/api/categories`);
-	// const productsRequest = useCombinedRequest(
-	// 	`${API_ENDPOINT}/api/products`,
-	// 	`${API_ENDPOINT}/api/products?withAvailability=true`
-	// );
 	const productsRequest = usePollingRequest(`${API_ENDPOINT}/api/products`);
 
 	const history = useHistory();
