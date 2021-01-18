@@ -13,6 +13,7 @@ const App = ({}) => {
 	const categoriesRequest = useRequest(`${API_ENDPOINT}/api/categories`);
 	const productsRequest = usePollingRequest(`${API_ENDPOINT}/api/products/`, `${API_ENDPOINT}/api/jobs/`);
 
+
 	const history = useHistory();
 	const { categoryIndex } = useParams();
 

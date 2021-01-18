@@ -11,7 +11,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77dc3b20-1a00-4828-8770-a80017687325" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/client/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.jsx" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/client/src/components/MySwitch.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/hooks/CustomHooks.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/CustomHooks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+>>>>>>> e5ac1b5cfa41b6b1ea89de90e27af15dd5e675a8
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +31,11 @@
     <option name="done" value="true" />
   </component>
   <component name="DarkyenusTimeTracker">
+<<<<<<< HEAD
     <option name="totalTimeSeconds" value="90008" />
+=======
+    <option name="totalTimeSeconds" value="89978" />
+>>>>>>> e5ac1b5cfa41b6b1ea89de90e27af15dd5e675a8
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -115,7 +128,11 @@
       <workItem from="1610483537388" duration="71600000" />
       <workItem from="1610830600191" duration="1230000" />
       <workItem from="1610874164519" duration="12705000" />
+<<<<<<< HEAD
       <workItem from="1610969316900" duration="15923000" />
+=======
+      <workItem from="1610969316900" duration="15892000" />
+>>>>>>> e5ac1b5cfa41b6b1ea89de90e27af15dd5e675a8
     </task>
     <servers />
   </component>
