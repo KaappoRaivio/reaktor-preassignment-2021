@@ -15,7 +15,7 @@ const useRequest = (url, { retries = 3 } = {}) => {
 				if (response.status < 200 || response.status >= 300) {
 					if (retriesLeft > 0) {
 						setRetriesLeft(retriesLeft => retriesLeft - 1);
-						return fetchData();
+						// return fetchData();
 					} else {
 						setError({ status: response.status, error: response.statusText });
 						setWaiting(false);
@@ -54,24 +54,25 @@ const useInterval = (callback, delay) => {
 	}, [callback, delay]);
 };
 
-const usePollingRequest = pollingInitialisationURL => {
-	const { waiting: pollingInitialisationWaiting, JSON, error: pollingInitializationError } = useRequest(
-		pollingInitialisationURL
+const usePollingRequest = (pollingInitializationURL, pollingURL) => {
+	const { waiting: pollingInitializationWaiting, JSON, error: pollingInitializationError } = useRequest(
+		pollingInitializationURL
 	);
 	const [UUID, setUUID] = useState(null);
 	const [finished, setFinished] = useState(false);
 	const [data, setData] = useState(null);
 	const [error, setError] = useState(null);
 
-	if (!pollingInitialisationWaiting && UUID == null) {
-		setUUID(JSON.uuid);
+	if (!pollingInitializationWaiting && UUID == null) {
+		setUUID(JSON.UUID);
 	}
 
 	useInterval(
 		async () => {
 			if (UUID) {
-				const response = await fetch(`${API_ENDPOINT}/api/jobs/${UUID}`);
+				const response = await fetch(`${pollingURL}${UUID}`);
 				if (response.status < 200 || response.status >= 300) {
+					console.log("problem");
 					return;
 				}
 				const { finished, hasNewData, data } = await response.json();

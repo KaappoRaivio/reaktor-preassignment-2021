@@ -11,17 +11,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77dc3b20-1a00-4828-8770-a80017687325" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/components/MySwitch.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/API.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/BadApiClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/BadApiClient.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/test/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/test/App.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/test/mockRequestData/availabilityHennex.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/test/mockRequestData/availabilityHennex.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/test/mockRequestData/availabilityIppal.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/test/mockRequestData/availabilityIppal.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/test/mockRequestData/availabilityJuuran.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/test/mockRequestData/availabilityJuuran.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/hooks/CustomHooks.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/CustomHooks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +27,7 @@
     <option name="done" value="true" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="86049" />
+    <option name="totalTimeSeconds" value="89978" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -125,7 +120,7 @@
       <workItem from="1610483537388" duration="71600000" />
       <workItem from="1610830600191" duration="1230000" />
       <workItem from="1610874164519" duration="12705000" />
-      <workItem from="1610969316900" duration="11550000" />
+      <workItem from="1610969316900" duration="15892000" />
     </task>
     <servers />
   </component>
@@ -149,11 +144,12 @@
       <screen x="926" y="0" width="2914" height="2160" />
     </state>
     <state x="1577" y="761" width="732" height="644" key="#Inspections/870.2160.1920.1080/926.0.2914.2160@926.0.2914.2160" timestamp="1610972261541" />
-    <state x="3645" y="0" width="625" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1610704362520">
-      <screen x="1920" y="0" width="2560" height="1440" />
+    <state x="2890" y="0" width="625" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1610992159158">
+      <screen x="926" y="0" width="2914" height="2160" />
     </state>
     <state x="1294" y="1080" width="616" height="403" key="#com.intellij.fileTypes.FileTypeChooser/0.1080.1920.1080/891.0.1029.1080@0.1080.1920.1080" timestamp="1610279682202" />
     <state x="3645" y="0" width="625" height="403" key="#com.intellij.fileTypes.FileTypeChooser/56.387.1864.1053/1920.0.2560.1440@1920.0.2560.1440" timestamp="1610704362520" />
+    <state x="2890" y="0" key="#com.intellij.fileTypes.FileTypeChooser/870.2160.1920.1080/926.0.2914.2160@926.0.2914.2160" timestamp="1610992159158" />
     <state x="3901" y="0" width="499" height="967" key="FileChooserDialogImpl" timestamp="1610836423221">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
@@ -189,10 +185,11 @@
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
     <state x="489" y="1983" width="437" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.1080.1920.1080/926.0.994.1080@0.1080.1920.1080" timestamp="1610306900202" />
-    <state x="2918" y="459" width="620" height="522" key="find.popup" timestamp="1610705634406">
-      <screen x="1920" y="0" width="2560" height="1440" />
+    <state x="2062" y="689" width="706" height="783" key="find.popup" timestamp="1610995366890">
+      <screen x="926" y="0" width="2914" height="2160" />
     </state>
     <state x="2918" y="459" width="620" height="522" key="find.popup/56.387.1864.1053/1920.0.2560.1440@1920.0.2560.1440" timestamp="1610705634406" />
+    <state x="2062" y="689" width="706" height="783" key="find.popup/870.2160.1920.1080/926.0.2914.2160@926.0.2914.2160" timestamp="1610995366890" />
     <state x="2032" y="503" key="run.anything.popup" timestamp="1610970291310">
       <screen x="926" y="0" width="2914" height="2160" />
     </state>
