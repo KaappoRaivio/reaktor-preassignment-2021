@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useHistory, useParams, useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useHistory, useLocation, useParams } from "react-router-dom";
 import Main from "./components/Main";
 import MyErrorBoundary from "./components/MyErrorBoundary";
 import PropTypes from "prop-types";
@@ -23,27 +23,26 @@ const App = props => {
 
 	const history = useHistory();
 	const { categoryIndex } = useParams();
-	const show = parseInt(useQuery().get("show"));
-	console.log(show);
+	const amountOfProductsToRenderFromURL = parseInt(useQuery().get("show"));
 
 	const [amountOfProductsToRender, setAmountOfProductsToRender] = useState(
-		show || props.amountOfProductsToRender || 100
+		amountOfProductsToRenderFromURL || props.amountOfProductsToRender || 100
 	); // TODO
 	const [selectedCategoryIndex, setSelectedCategoryIndex] = useState(parseInt(categoryIndex) || 0);
 
+	useEffect(() => {
+		replaceURL(history, selectedCategoryIndex, amountOfProductsToRender);
+	}, [selectedCategoryIndex, amountOfProductsToRender]);
+
 	const onCategoryClicked = index => {
 		const newAmount = props.amountOfProductsToRender || 100;
-		replaceURL(history, index, newAmount);
+		// replaceURL(history, index, newAmount);
 		setSelectedCategoryIndex(index);
 		setAmountOfProductsToRender(newAmount);
 	};
 
 	const onMoreProductsRequested = () => {
-		setAmountOfProductsToRender(x => {
-			const newValue = x + (props.amountOfProductsToIncrease || 100);
-			replaceURL(history, selectedCategoryIndex, newValue);
-			return newValue;
-		});
+		setAmountOfProductsToRender(x => x + (props.amountOfProductsToIncrease || 100));
 	};
 
 	if (categoriesRequest.waiting) {
