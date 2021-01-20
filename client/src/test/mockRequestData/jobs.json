@@ -1,5 +1,8 @@
 {
-	"products": {
+	"UUID": "7ec4623d-5f4e-4815-b5f5-c1771a8a0d46",
+	"finished": true,
+	"hasNewData": true,
+	"data": {
 		"gloves": [
 			{
 				"id": "438dc024f17e98a6cf2d",

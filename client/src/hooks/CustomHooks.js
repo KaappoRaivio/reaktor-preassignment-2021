@@ -75,8 +75,8 @@ const usePollingRequest = (pollingInitializationURL, pollingURL) => {
 					console.log("problem");
 					return;
 				}
-				const { finished, hasNewData, data } = await response.json();
-				// console.log(finished, hasNewData, data);
+				const JSON = await response.json();
+				const { finished, hasNewData, data } = JSON;
 				setFinished(finished);
 
 				if (hasNewData) {

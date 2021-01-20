@@ -11,16 +11,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77dc3b20-1a00-4828-8770-a80017687325" name="Default Changelist" comment="">
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/client/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.jsx" afterDir="false" />
-=======
-      <change afterPath="$PROJECT_DIR$/client/src/components/MySwitch.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/test/mockRequestData/jobs.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Products.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Products.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/hooks/CustomHooks.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/CustomHooks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
->>>>>>> e5ac1b5cfa41b6b1ea89de90e27af15dd5e675a8
+      <change beforePath="$PROJECT_DIR$/client/src/test/App.test.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/test/App.test.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/test/mockRequestData/products.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/test/mockRequestData/products.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/test/mockRequestData/productsWithAvailability.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,11 +30,7 @@
     <option name="done" value="true" />
   </component>
   <component name="DarkyenusTimeTracker">
-<<<<<<< HEAD
-    <option name="totalTimeSeconds" value="90008" />
-=======
-    <option name="totalTimeSeconds" value="89978" />
->>>>>>> e5ac1b5cfa41b6b1ea89de90e27af15dd5e675a8
+    <option name="totalTimeSeconds" value="96301" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -93,15 +88,13 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -128,11 +121,8 @@
       <workItem from="1610483537388" duration="71600000" />
       <workItem from="1610830600191" duration="1230000" />
       <workItem from="1610874164519" duration="12705000" />
-<<<<<<< HEAD
       <workItem from="1610969316900" duration="15923000" />
-=======
-      <workItem from="1610969316900" duration="15892000" />
->>>>>>> e5ac1b5cfa41b6b1ea89de90e27af15dd5e675a8
+      <workItem from="1611163488297" duration="6846000" />
     </task>
     <servers />
   </component>
@@ -197,11 +187,11 @@
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
     <state x="489" y="1983" width="437" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.1080.1920.1080/926.0.994.1080@0.1080.1920.1080" timestamp="1610306900202" />
-    <state x="2062" y="689" width="706" height="783" key="find.popup" timestamp="1610995366890">
+    <state x="2062" y="689" width="706" height="783" key="find.popup" timestamp="1611169630069">
       <screen x="926" y="0" width="2914" height="2160" />
     </state>
     <state x="2918" y="459" width="620" height="522" key="find.popup/56.387.1864.1053/1920.0.2560.1440@1920.0.2560.1440" timestamp="1610705634406" />
-    <state x="2062" y="689" width="706" height="783" key="find.popup/870.2160.1920.1080/926.0.2914.2160@926.0.2914.2160" timestamp="1610995366890" />
+    <state x="2062" y="689" width="706" height="783" key="find.popup/870.2160.1920.1080/926.0.2914.2160@926.0.2914.2160" timestamp="1611169630069" />
     <state x="2032" y="503" key="run.anything.popup" timestamp="1610970291310">
       <screen x="926" y="0" width="2914" height="2160" />
     </state>
@@ -209,13 +199,13 @@
     <state x="2558" y="515" key="run.anything.popup/0.1080.1920.1080/891.0.1029.1080@0.1080.1920.1080" timestamp="1610278765489" />
     <state x="2892" y="335" key="run.anything.popup/56.387.1864.1053/1920.0.2560.1440@1920.0.2560.1440" timestamp="1610702318853" />
     <state x="2032" y="503" key="run.anything.popup/870.2160.1920.1080/926.0.2914.2160@926.0.2914.2160" timestamp="1610970291310" />
-    <state x="2566" y="510" width="1020" height="678" key="search.everywhere.popup" timestamp="1610979788455">
+    <state x="2566" y="510" width="1020" height="678" key="search.everywhere.popup" timestamp="1611164372909">
       <screen x="926" y="0" width="2914" height="2160" />
     </state>
     <state x="2557" y="401" width="672" height="678" key="search.everywhere.popup/0.1080.1920.1080/891.0.1029.1080@0.1080.1920.1080" timestamp="1610280607051" />
     <state x="1081" y="1335" width="672" height="339" key="search.everywhere.popup/0.1080.1920.1080/926.0.994.1080@0.1080.1920.1080" timestamp="1610367985971" />
     <state x="3361" y="340" width="896" height="452" key="search.everywhere.popup/56.387.1864.1053/1920.0.2560.1440@1920.0.2560.1440" timestamp="1610715015218" />
     <state x="2552" y="509" width="672" height="678" key="search.everywhere.popup/835.2160.1920.1080/891.0.2949.2160@891.0.2949.2160" timestamp="1610280672067" />
-    <state x="2566" y="510" width="1020" height="678" key="search.everywhere.popup/870.2160.1920.1080/926.0.2914.2160@926.0.2914.2160" timestamp="1610979788455" />
+    <state x="2566" y="510" width="1020" height="678" key="search.everywhere.popup/870.2160.1920.1080/926.0.2914.2160@926.0.2914.2160" timestamp="1611164372909" />
   </component>
 </project>

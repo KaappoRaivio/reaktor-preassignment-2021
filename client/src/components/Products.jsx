@@ -27,6 +27,7 @@ Products.propTypes = {
 	products: PropTypes.object,
 	categories: PropTypes.arrayOf(PropTypes.string).isRequired,
 	selectedCategory: PropTypes.number.isRequired,
+	amountOfProductsToRender: PropTypes.number.isRequired,
 };
 
 export default Products;

@@ -4,7 +4,6 @@ import { act, screen } from "@testing-library/react";
 import App from "../App";
 
 import renderWithRouter from "./TestUtils";
-import supertest from "supertest";
 
 jest.mock("node-fetch", () => require("fetch-mock-jest"));
 import fetchMock from "fetch-mock";
@@ -13,41 +12,42 @@ import { fireEvent, wait, waitFor, waitForElement } from "@testing-library/dom";
 
 import categoriesMockResponse from "./mockRequestData/categories.json";
 import productsMockResponse from "./mockRequestData/products.json";
-import productsWithAvailabilityMockResponse from "./mockRequestData/productsWithAvailability.json";
+import jobMockResponse from "./mockRequestData/jobs.json";
 import { BrowserRouter, MemoryRouter, Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
+import MySwitch from "../components/MySwitch";
 
 describe("Test the app", () => {
-	fetchMock.get("/api/categories", categoriesMockResponse);
-	fetchMock.get("/api/products", productsMockResponse);
-	fetchMock.get("/api/products?withAvailability=true", productsWithAvailabilityMockResponse);
+	fetchMock.get("/api/categories/", categoriesMockResponse);
+	fetchMock.get("/api/products/", productsMockResponse);
+	fetchMock.get("/api/jobs/7ec4623d-5f4e-4815-b5f5-c1771a8a0d46", jobMockResponse);
 
 	test("It should show product categories correctly", done => {
 		const inner = async () => {
 			renderWithRouter(<App />);
 
-			await waitFor(() => screen.getAllByTestId("category"));
-			const categories = await screen.getAllByTestId("category");
+			const categories = await waitFor(() => screen.getAllByTestId("category"));
 			expect(new Set(categories.map(categoryElement => categoryElement.textContent))).toEqual(
 				new Set(categoriesMockResponse)
 			);
 		};
 		inner().then(done);
 	});
-
+	//
 	test("It should show different products when clicking a category", done => {
 		const inner = async () => {
-			renderWithRouter(<App />);
+			await act(async () => {
+				renderWithRouter(<App />);
+				// renderWithRouter(<App amountOfProductsToRender={3} amountOfProductsToIncrease={2} />);
+			});
 
-			await waitFor(() => screen.getAllByRole("button", { name: /^(?!load more).*$/i }));
-			const categoryElements = await screen.getAllByRole("button", { name: /^(?!load more).*$/i });
+			const categoryElements = await waitFor(() => screen.getAllByRole("button", { name: /^(?!load more).*$/i }));
 
 			const products = [];
 			for (const categoryElement of categoryElements) {
 				fireEvent.click(categoryElement);
 
-				await waitFor(() => screen.getAllByText(/^Category: /i));
-				const productElementCategories = await screen.getAllByText(/^Category: /i);
+				const productElementCategories = await waitFor(() => screen.getAllByText(/^Category: /i));
 				productElementCategories.map(productElementCategory =>
 					expect(productElementCategory.textContent).toMatch(categoryElement.textContent)
 				);
@@ -59,10 +59,11 @@ describe("Test the app", () => {
 
 	test("It should show more products when requested", done => {
 		const inner = async () => {
-			renderWithRouter(<App amountOfProductsToShow={3} amountOfProductsToIncrease={2} />);
+			await act(async () => {
+				renderWithRouter(<App amountOfProductsToRender={3} amountOfProductsToIncrease={2} />);
+			});
 
-			await waitFor(() => screen.getAllByRole("listitem"));
-			const productElementsBefore = await screen.getAllByRole("listitem");
+			const productElementsBefore = await waitFor(() => screen.getAllByRole("listitem"));
 			expect(productElementsBefore).toHaveLength(3);
 
 			const showMore = await screen.getByRole("button", { name: /load more/i });
@@ -76,17 +77,18 @@ describe("Test the app", () => {
 
 	test("It should not try to show more products than it has", done => {
 		const inner = async () => {
-			renderWithRouter(<App amountOfProductsToShow={7} amountOfProductsToIncrease={100} />);
+			await act(async () => {
+				renderWithRouter(<App amountOfProductsToRender={7} amountOfProductsToIncrease={100} />);
+			});
 
-			await waitFor(() => screen.getAllByRole("listitem"));
-			const productElementsBefore = await screen.getAllByRole("listitem");
+			const productElementsBefore = await waitFor(() => screen.getAllByRole("listitem"));
 			expect(productElementsBefore).toHaveLength(7);
 
 			const showMore = await screen.getByRole("button", { name: /load more/i });
 			fireEvent.click(showMore);
 			fireEvent.click(showMore);
 			const productElementsAfter = await screen.getAllByRole("listitem");
-			expect(productElementsAfter).toHaveLength(productsMockResponse.products.beanies.length);
+			expect(productElementsAfter).toHaveLength(jobMockResponse.data.beanies.length);
 
 			const showMoreAfter = await screen.getByRole("button", { name: /load more/i });
 			expect(showMoreAfter).toBeDisabled();
@@ -98,23 +100,23 @@ describe("Test the app", () => {
 		const inner = async () => {
 			const initialLength = 7;
 			const increase = 1;
+			await act(async () => {
+				renderWithRouter(
+					<App amountOfProductsToRender={initialLength} amountOfProductsToIncrease={increase} />
+				);
+			});
 
-			renderWithRouter(<App amountOfProductsToShow={initialLength} amountOfProductsToIncrease={increase} />);
-
-			await waitFor(() => screen.getByRole("button", { name: /load more/i }));
-			const showMore = await screen.getByRole("button", { name: /load more/i });
+			const showMore = await waitFor(() => screen.getByRole("button", { name: /load more/i }));
 			fireEvent.click(showMore);
 
-			const productElementsBefore = await screen.getAllByRole("listitem");
+			const productElementsBefore = await waitFor(() => screen.getAllByRole("listitem"));
 			expect(productElementsBefore).toHaveLength(initialLength + increase);
 
-			await waitFor(() => screen.getAllByRole("button", { name: /^(?!load more).*$/i }));
-			const categoryElements = await screen.getAllByRole("button", { name: /^(?!load more).*$/i });
-			// console.log(categoryElements);
+			const categoryElements = await waitFor(() => screen.getAllByRole("button", { name: /^(?!load more).*$/i }));
 			fireEvent.click(categoryElements[1]);
-			//
-			// waitFor(() => screen.getAllByRole("listitem"));
-			const productElementsAfter = await screen.getAllByRole("listitem");
+			// //
+
+			const productElementsAfter = await waitFor(() => screen.getAllByRole("listitem"));
 			expect(productElementsAfter).toHaveLength(initialLength);
 		};
 		inner().then(done);
@@ -124,30 +126,50 @@ describe("Test the app", () => {
 describe("Test the routing", () => {
 	test("It should redirect to /products/ when URL path is '/'", done => {
 		const inner = async () => {
-			renderWithRouter(<App />, { route: "/" });
-
+			await act(async () => {
+				renderWithRouter(
+					<MySwitch>
+						<App />
+					</MySwitch>,
+					{ route: "/" }
+				);
+			});
 			await waitFor(() => screen.getByRole("button", { name: /load more/i }));
-			expect(location.pathname).toBe("/category/");
+			expect(location.pathname).toMatch("/category/0");
 		};
 		inner().then(done);
 	});
 
 	test("It should redirect to /products/ when URL path is garbage", done => {
 		const inner = async () => {
-			renderWithRouter(<App />, { route: "/never/gonna/give/you/up/" });
+			await act(async () => {
+				renderWithRouter(
+					<MySwitch>
+						<App />
+					</MySwitch>,
+					{ route: "/never/gonna/give/you/up/" }
+				);
+			});
 
 			await waitFor(() => screen.getByRole("button", { name: /load more/i }));
-			expect(location.pathname).toBe("/category/");
+			expect(location.pathname).toMatch("/category/0");
 		};
 		inner().then(done);
 	});
 
 	test("It should select the corresponding category from URL param", done => {
-		renderWithRouter(<App />, { route: "/category/facemasks/" });
-
 		const inner = async () => {
+			await act(async () => {
+				renderWithRouter(
+					<MySwitch>
+						<App />
+					</MySwitch>,
+					{ route: "/category/1" }
+				);
+			});
 			await waitFor(() => screen.getAllByText(/^Category: /i));
 			const productElements = await screen.getAllByText(/^Category: /i);
+
 			expect(productElements[0].textContent).toEqual("Category: facemasks");
 		};
 
@@ -155,9 +177,15 @@ describe("Test the routing", () => {
 	});
 
 	test("It should handle invalid URL param gracefully", done => {
-		renderWithRouter(<App />, { route: "/category/xyzzy/" });
-
 		const inner = async () => {
+			await act(async () => {
+				renderWithRouter(
+					<MySwitch>
+						<App />
+					</MySwitch>,
+					{ route: "/category/xyzzy/" }
+				);
+			});
 			await waitFor(() => screen.getAllByText(/^Category: /i));
 		};
 

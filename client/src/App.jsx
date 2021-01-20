@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory, useParams, useLocation } from "react-router-dom";
 import Main from "./components/Main";
 import MyErrorBoundary from "./components/MyErrorBoundary";
 import PropTypes from "prop-types";
@@ -9,26 +9,41 @@ import Error from "./components/Error";
 const IS_DEVELOPMENT_ENVIRONMENT = !process.env.NODE_ENV || process.env.NODE_ENV === "development";
 const API_ENDPOINT = IS_DEVELOPMENT_ENVIRONMENT ? "http://localhost:5000" : "";
 
-const App = ({}) => {
-	const categoriesRequest = useRequest(`${API_ENDPOINT}/api/categories`);
-	const productsRequest = usePollingRequest(`${API_ENDPOINT}/api/products/`, `${API_ENDPOINT}/api/jobs/`);
+const useQuery = () => {
+	return new URLSearchParams(useLocation().search);
+};
 
+const replaceURL = (history, categoryIndex, amountOfProductsToRender) => {
+	history.replace(`/category/${categoryIndex}?show=${amountOfProductsToRender}`);
+};
+
+const App = props => {
+	const categoriesRequest = useRequest(`${API_ENDPOINT}/api/categories/`);
+	const productsRequest = usePollingRequest(`${API_ENDPOINT}/api/products/`, `${API_ENDPOINT}/api/jobs/`);
 
 	const history = useHistory();
 	const { categoryIndex } = useParams();
+	const show = parseInt(useQuery().get("show"));
+	console.log(show);
 
-	const [amountOfProductsToRender, setAmountOfProductsToRender] = useState(100); // TODO
+	const [amountOfProductsToRender, setAmountOfProductsToRender] = useState(
+		show || props.amountOfProductsToRender || 100
+	); // TODO
 	const [selectedCategoryIndex, setSelectedCategoryIndex] = useState(parseInt(categoryIndex) || 0);
 
 	const onCategoryClicked = index => {
+		const newAmount = props.amountOfProductsToRender || 100;
+		replaceURL(history, index, newAmount);
 		setSelectedCategoryIndex(index);
-		history.replace(`/category/${index}`);
-
-		setAmountOfProductsToRender(100);
+		setAmountOfProductsToRender(newAmount);
 	};
 
 	const onMoreProductsRequested = () => {
-		setAmountOfProductsToRender(amountOfProductsToRender => amountOfProductsToRender + 100);
+		setAmountOfProductsToRender(x => {
+			const newValue = x + (props.amountOfProductsToIncrease || 100);
+			replaceURL(history, selectedCategoryIndex, newValue);
+			return newValue;
+		});
 	};
 
 	if (categoriesRequest.waiting) {
@@ -47,7 +62,7 @@ const App = ({}) => {
 	return (
 		<MyErrorBoundary>
 			<Main
-				amountOfProductsToShow={amountOfProductsToRender}
+				amountOfProductsToRender={amountOfProductsToRender}
 				onMoreProductsRequested={onMoreProductsRequested}
 				onCategoryClicked={onCategoryClicked}
 				selectedCategoryIndex={selectedCategoryIndex}
@@ -59,7 +74,7 @@ const App = ({}) => {
 };
 
 App.propTypes = {
-	amountOfProductsToShow: PropTypes.number,
+	amountOfProductsToRender: PropTypes.number,
 	amountOfProductsToIncrease: PropTypes.number,
 };
 

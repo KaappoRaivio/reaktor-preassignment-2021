@@ -5,7 +5,7 @@ import React from "react";
 import MyErrorBoundary from "./MyErrorBoundary";
 
 const Main = ({
-	amountOfProductsToShow,
+	amountOfProductsToRender,
 	onMoreProductsRequested,
 	onCategoryClicked,
 	products,
@@ -33,7 +33,7 @@ const Main = ({
 							products={products}
 							selectedCategory={selectedCategoryIndex}
 							onMoreProductsRequested={onMoreProductsRequested}
-							amountOfProductsToRender={amountOfProductsToShow}
+							amountOfProductsToRender={amountOfProductsToRender}
 						/>
 					</MyErrorBoundary>
 				)}
