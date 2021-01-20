@@ -12,9 +12,7 @@
   <component name="ChangeListManager">
     <list default="true" id="77dc3b20-1a00-4828-8770-a80017687325" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/test/App.test.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/test/App.test.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/test/TestUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/test/TestUtils.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +23,7 @@
     <option name="done" value="true" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="97362" />
+    <option name="totalTimeSeconds" value="97701" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -117,7 +115,7 @@
       <workItem from="1610830600191" duration="1230000" />
       <workItem from="1610874164519" duration="12705000" />
       <workItem from="1610969316900" duration="15923000" />
-      <workItem from="1611163488297" duration="7994000" />
+      <workItem from="1611163488297" duration="8334000" />
     </task>
     <servers />
   </component>

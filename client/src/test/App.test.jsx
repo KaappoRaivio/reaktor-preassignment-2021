@@ -124,6 +124,18 @@ describe("Test the app", () => {
 		};
 		inner().then(done);
 	});
+
+	test("It should use a value from URL query param if available", done => {
+		const inner = async () => {
+			await act(async () => {
+				renderWithRouter(<App />, { route: "/category/0?show=4" });
+			});
+
+			const productElements = await waitFor(() => screen.getAllByRole("listitem"));
+			expect(productElements).toHaveLength(4);
+		};
+		inner().then(done);
+	});
 });
 
 describe("Test the routing", () => {
