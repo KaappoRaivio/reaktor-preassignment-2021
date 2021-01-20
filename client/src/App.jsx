@@ -25,9 +25,7 @@ const App = props => {
 	const { categoryIndex } = useParams();
 	const amountOfProductsToRenderFromURL = parseInt(useQuery().get("show"));
 
-	const [amountOfProductsToRender, setAmountOfProductsToRender] = useState(
-		amountOfProductsToRenderFromURL || props.amountOfProductsToRender || 100
-	); // TODO
+	const [amountOfProductsToRender, setAmountOfProductsToRender] = useState(amountOfProductsToRenderFromURL || 100); // TODO
 	const [selectedCategoryIndex, setSelectedCategoryIndex] = useState(parseInt(categoryIndex) || 0);
 
 	useEffect(() => {
@@ -73,7 +71,7 @@ const App = props => {
 };
 
 App.propTypes = {
-	amountOfProductsToRender: PropTypes.number,
+	// amountOfProductsToRender: PropTypes.number,
 	amountOfProductsToIncrease: PropTypes.number,
 };
 

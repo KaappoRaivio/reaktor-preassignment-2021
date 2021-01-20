@@ -60,7 +60,7 @@ describe("Test the app", () => {
 	test("It should show more products when requested", done => {
 		const inner = async () => {
 			await act(async () => {
-				renderWithRouter(<App amountOfProductsToRender={3} amountOfProductsToIncrease={2} />);
+				renderWithRouter(<App amountOfProductsToIncrease={2} />, { route: "/category/0?show=3" });
 			});
 
 			const productElementsBefore = await waitFor(() => screen.getAllByRole("listitem"));
@@ -78,7 +78,7 @@ describe("Test the app", () => {
 	test("It should not try to show more products than it has", done => {
 		const inner = async () => {
 			await act(async () => {
-				renderWithRouter(<App amountOfProductsToRender={7} amountOfProductsToIncrease={100} />);
+				renderWithRouter(<App amountOfProductsToIncrease={100} />, { route: "/category/0?show=7" });
 			});
 
 			const productElementsBefore = await waitFor(() => screen.getAllByRole("listitem"));
@@ -102,7 +102,10 @@ describe("Test the app", () => {
 			const increase = 1;
 			await act(async () => {
 				renderWithRouter(
-					<App amountOfProductsToRender={initialLength} amountOfProductsToIncrease={increase} />
+					<App amountOfProductsToRender={initialLength} amountOfProductsToIncrease={increase} />,
+					{
+						route: `/category/0?show=${initialLength}`,
+					}
 				);
 			});
 
@@ -127,12 +130,7 @@ describe("Test the routing", () => {
 	test("It should redirect to /products/ when URL path is '/'", done => {
 		const inner = async () => {
 			await act(async () => {
-				renderWithRouter(
-					<MySwitch>
-						<App />
-					</MySwitch>,
-					{ route: "/" }
-				);
+				renderWithRouter(<App />, { route: "/" });
 			});
 			await waitFor(() => screen.getByRole("button", { name: /load more/i }));
 			expect(location.pathname).toMatch("/category/0");
@@ -143,12 +141,7 @@ describe("Test the routing", () => {
 	test("It should redirect to /products/ when URL path is garbage", done => {
 		const inner = async () => {
 			await act(async () => {
-				renderWithRouter(
-					<MySwitch>
-						<App />
-					</MySwitch>,
-					{ route: "/never/gonna/give/you/up/" }
-				);
+				renderWithRouter(<App />, { route: "/never/gonna/give/you/up/" });
 			});
 
 			await waitFor(() => screen.getByRole("button", { name: /load more/i }));
@@ -160,12 +153,7 @@ describe("Test the routing", () => {
 	test("It should select the corresponding category from URL param", done => {
 		const inner = async () => {
 			await act(async () => {
-				renderWithRouter(
-					<MySwitch>
-						<App />
-					</MySwitch>,
-					{ route: "/category/1" }
-				);
+				renderWithRouter(<App />, { route: "/category/1" });
 			});
 			await waitFor(() => screen.getAllByText(/^Category: /i));
 			const productElements = await screen.getAllByText(/^Category: /i);
@@ -179,12 +167,7 @@ describe("Test the routing", () => {
 	test("It should handle invalid URL param gracefully", done => {
 		const inner = async () => {
 			await act(async () => {
-				renderWithRouter(
-					<MySwitch>
-						<App />
-					</MySwitch>,
-					{ route: "/category/xyzzy/" }
-				);
+				renderWithRouter(<App />, { route: "/category/xyzzy/" });
 			});
 			await waitFor(() => screen.getAllByText(/^Category: /i));
 		};
