@@ -2,29 +2,16 @@ const express = require("express");
 const memoryCache = require("memory-cache");
 const API = require("./API.js");
 var timeout = require("connect-timeout");
+const compression = require("compression");
+
 const app = express();
-
-// const cache = duration => (req, res, next) => {
-// 	const key = "__express__" + req.originalUrl || req.url;
-// 	const cachedBody = memoryCache.get(key);
-//
-// 	if (cachedBody) {
-// 		res.send(cachedBody);
-// 	} else {
-// 		res.sendResponse = res.send;
-// 		res.send = body => {
-// 			memoryCache.put(key, body, duration * 1000);
-// 			res.sendResponse(body);
-// 		};
-// 		next();
-// 	}
-// };
-
+app.use(compression());
+API(app);
 app.use((err, req, res, next) => {
 	res.status(500);
-	res.render("error", { error: err });
+	console.log("error", err);
+	res.json({ error: err });
+	// res.render("error", { error: err });
 });
-
-API(app);
 
 module.exports = app;

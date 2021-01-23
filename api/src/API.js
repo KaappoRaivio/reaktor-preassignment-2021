@@ -1,8 +1,6 @@
 const { combineAvailabilityWithProductInformation } = require("./ProcessData");
 const { v4: uuidv4, validate: validateUUID } = require("uuid");
-const NodeCache = require("node-cache");
-
-const { getProducts, getAvailabilityRequests, PRODUCT_CATEGORIES } = require("./BadApiClient");
+const { getProducts, getAvailabilityPromises, PRODUCT_CATEGORIES } = require("./BadApiClient");
 
 const jobs = {};
 const job = () => {
@@ -10,7 +8,6 @@ const job = () => {
 };
 
 const LATEST_PRODUCTS_KEY = "latest_products";
-const productCache = new NodeCache({ stdTTL: 300, checkperiod: 300 });
 
 module.exports = app => {
 	app.get("/api/products", async (req, res, next) => {
@@ -20,31 +17,19 @@ module.exports = app => {
 
 			res.status(202).json({ UUID: newJob.UUID });
 
-			const valueFromCache = productCache.get(LATEST_PRODUCTS_KEY);
-
-			if (valueFromCache) {
-				newJob.data = valueFromCache;
-				newJob.finished = true;
-				newJob.hasNewData = true;
-				return;
-			}
-
 			const products = await getProducts();
 			newJob.data = products;
 			newJob.hasNewData = true;
 
 			let availability = {};
-			const availabilityRequests = getAvailabilityRequests(products);
-			availabilityRequests.map(availabilityRequest =>
-				availabilityRequest.then(({ availabilityData, isLastRequest }) => {
+			getAvailabilityPromises(products).map(availabilityPromise =>
+				availabilityPromise.then(({ availabilityData, isLastPromise }) => {
 					availability = { ...availability, ...availabilityData };
 
-					const data = combineAvailabilityWithProductInformation(products, availability);
-					newJob.data = data;
+					newJob.data = combineAvailabilityWithProductInformation(products, availability);
 					newJob.hasNewData = true;
-					if (isLastRequest) {
+					if (isLastPromise) {
 						newJob.finished = true;
-						productCache.set(LATEST_PRODUCTS_KEY, data);
 					}
 				})
 			);
@@ -54,37 +39,41 @@ module.exports = app => {
 	});
 
 	app.get("/api/jobs/:UUID", async (req, res, next) => {
-		const { UUID } = req.params;
-		console.log(UUID);
+		try {
+			const { UUID } = req.params;
+			console.log(UUID);
 
-		if (!validateUUID(UUID)) {
-			res.sendStatus(400);
-			return;
+			if (!validateUUID(UUID)) {
+				res.sendStatus(400);
+				return;
+			}
+
+			if (!(UUID in jobs)) {
+				res.sendStatus(404);
+				return;
+			}
+
+			const job = jobs[UUID];
+
+			const responseJSON = {
+				UUID,
+				finished: job.finished,
+				hasNewData: job.hasNewData,
+				data: job.hasNewData ? job.data : null,
+			};
+			job.hasNewData = false;
+
+			if (job.finished) {
+				delete jobs[UUID];
+				res.status(200);
+			} else {
+				res.status(202);
+			}
+
+			res.json(responseJSON);
+		} catch (err) {
+			next(err);
 		}
-
-		if (!(UUID in jobs)) {
-			res.sendStatus(404);
-			return;
-		}
-
-		const job = jobs[UUID];
-
-		const responseJSON = {
-			UUID,
-			finished: job.finished,
-			hasNewData: job.hasNewData,
-			data: job.hasNewData ? job.data : null,
-		};
-		job.hasNewData = false;
-
-		if (job.finished) {
-			delete jobs[UUID];
-			res.status(200);
-		} else {
-			res.status(202);
-		}
-
-		res.json(responseJSON);
 	});
 
 	app.get("/api/categories", (req, res) => {

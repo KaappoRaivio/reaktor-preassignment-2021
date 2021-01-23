@@ -25,7 +25,9 @@ const App = props => {
 	const { categoryIndex } = useParams();
 	const amountOfProductsToRenderFromURL = parseInt(useQuery().get("show"));
 
-	const [amountOfProductsToRender, setAmountOfProductsToRender] = useState(amountOfProductsToRenderFromURL || 100); // TODO
+	const [amountOfProductsToRender, setAmountOfProductsToRender] = useState(
+		amountOfProductsToRenderFromURL > 0 ? amountOfProductsToRenderFromURL : 100
+	);
 	const [selectedCategoryIndex, setSelectedCategoryIndex] = useState(parseInt(categoryIndex) || 0);
 
 	useEffect(() => {
@@ -34,7 +36,6 @@ const App = props => {
 
 	const onCategoryClicked = index => {
 		const newAmount = props.amountOfProductsToRender || 100;
-		// replaceURL(history, index, newAmount);
 		setSelectedCategoryIndex(index);
 		setAmountOfProductsToRender(newAmount);
 	};
@@ -71,7 +72,6 @@ const App = props => {
 };
 
 App.propTypes = {
-	// amountOfProductsToRender: PropTypes.number,
 	amountOfProductsToIncrease: PropTypes.number,
 };
 

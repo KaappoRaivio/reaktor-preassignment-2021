@@ -1,4 +1,5 @@
-const fetch = require("node-fetch");
+const cachedJSONFetch = require("./CachedJSONFetch");
+
 const {
 	combineAvailabilityWithProductInformation,
 	parseAvailabilityResponse,
@@ -10,28 +11,36 @@ const API_ENDPOINT = "https://bad-api-assignment.reaktor.com/v2";
 const PRODUCT_CATEGORIES = ["gloves", "facemasks", "beanies"];
 
 const getCategory = category => {
-	return fetch(`${API_ENDPOINT}/products/${category}`)
-		.then(res => res.json())
+	return cachedJSONFetch(`${API_ENDPOINT}/products/${category}`)
 		.then(responseJSON => {
+			console.log("JSON");
 			return { category, products: responseJSON };
-		});
+		})
+		.catch(err => console.error(err));
 };
 
-const getAvailability = manufacturer => {
-	return fetch(`${API_ENDPOINT}/availability/${manufacturer}`)
-		.then(res => res.json())
+const getAvailability = (manufacturer, maxRetries = 3) => {
+	return cachedJSONFetch(`${API_ENDPOINT}/availability/${manufacturer}`, json => json.response !== "[]")
 		.then(responseJSON => {
 			if (responseJSON.response === "[]") {
-				return getAvailability(manufacturer);
+				if (maxRetries >= 0) {
+					return getAvailability(manufacturer, maxRetries - 1);
+				} else {
+					return Promise.reject();
+				}
 			}
 
 			const result = {};
 			for (const entry of responseJSON.response) {
 				const { id, DATAPAYLOAD } = entry;
-
 				result[id.toLowerCase()] = parseAvailabilityResponse(DATAPAYLOAD);
 			}
 			return result;
+		})
+		.catch(err => {
+			console.error(err);
+			console.log(`Didn't get results for ${manufacturer}`);
+			return [];
 		});
 };
 
@@ -47,32 +56,18 @@ const getProducts = async () => {
 	return addAvailabilityToProductInformation(products);
 };
 
-const getAvailabilityRequests = products => {
+const getAvailabilityPromises = products => {
 	const manufacturers = getManufacturers(products);
-
 	let counter = 0;
 
-	const availabilityRequests = manufacturers.map(getAvailability);
-	return availabilityRequests.map(availabilityRequest =>
+	return manufacturers.map(getAvailability).map(availabilityRequest =>
 		availabilityRequest.then(availabilityData => {
 			counter += 1;
 
-			let isLastRequest = counter === manufacturers.length;
-			return { availabilityData, isLastRequest };
+			let isLastPromise = counter === manufacturers.length;
+			return { availabilityData, isLastPromise };
 		})
 	);
-	// return availabilityRequests.map(availability => _products => {
-	// 	return combineAvailabilityWithProductInformation(_products, availability)
-	// })
-
-	// const availabilityResponses = await Promise.all(availabilityRequests);
-
-	// let availability = {};
-	// for (const response of availabilityResponses) {
-	// 	availability = { ...availability, ...response };
-	// }
-	//
-	// return combineAvailabilityWithProductInformation(products, availability);
 };
 
-module.exports = { getProducts, getAvailabilityRequests, PRODUCT_CATEGORIES, API_ENDPOINT };
+module.exports = { getProducts, getAvailabilityPromises, PRODUCT_CATEGORIES, API_ENDPOINT };
