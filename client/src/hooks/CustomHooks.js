@@ -72,7 +72,6 @@ const usePollingRequest = (pollingInitializationURL, pollingURL) => {
 			if (UUID) {
 				const response = await fetch(`${pollingURL}${UUID}`);
 				if (response.status < 200 || response.status >= 300) {
-					console.log("problem");
 					return;
 				}
 				const JSON = await response.json();

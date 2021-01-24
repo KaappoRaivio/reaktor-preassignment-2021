@@ -41,7 +41,6 @@ module.exports = app => {
 	app.get("/api/jobs/:UUID", async (req, res, next) => {
 		try {
 			const { UUID } = req.params;
-			console.log(UUID);
 
 			if (!validateUUID(UUID)) {
 				res.sendStatus(400);

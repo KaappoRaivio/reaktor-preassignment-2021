@@ -1,3 +1,5 @@
+const debug = require("debug")("BadApiClient");
+
 const cachedJSONFetch = require("./CachedJSONFetch");
 
 const {
@@ -13,10 +15,9 @@ const PRODUCT_CATEGORIES = ["gloves", "facemasks", "beanies"];
 const getCategory = category => {
 	return cachedJSONFetch(`${API_ENDPOINT}/products/${category}`)
 		.then(responseJSON => {
-			console.log("JSON");
 			return { category, products: responseJSON };
 		})
-		.catch(err => console.error(err));
+		.catch(err => debug(err));
 };
 
 const getAvailability = (manufacturer, maxRetries = 3) => {
@@ -38,8 +39,8 @@ const getAvailability = (manufacturer, maxRetries = 3) => {
 			return result;
 		})
 		.catch(err => {
-			console.error(err);
-			console.log(`Didn't get results for ${manufacturer}`);
+			debug(`Didn't get results for ${manufacturer}`);
+			debug(err);
 			return [];
 		});
 };

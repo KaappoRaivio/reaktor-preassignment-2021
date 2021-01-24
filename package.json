@@ -9,6 +9,7 @@
 		"babel-preset-env": "^1.7.0",
 		"compression": "^1.7.4",
 		"connect-timeout": "^1.9.0",
+		"debug": "^4.3.1",
 		"dom-parser": "^0.1.6",
 		"express": "^4.17.1",
 		"fetch-mock": "^9.11.0",

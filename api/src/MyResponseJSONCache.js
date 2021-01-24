@@ -1,3 +1,5 @@
+const debug = require("debug")("MyResponseJSONCache");
+
 const NodeCache = require("node-cache");
 
 class MyResponseJSONCache {
@@ -9,7 +11,7 @@ class MyResponseJSONCache {
 		const promise = this.cache.get(key);
 
 		if (promise) {
-			console.log(`Cache hit for ${key}`);
+			debug(`Cache hit for ${key}`);
 			return promise;
 		} else {
 			const promise = onCacheMissed();

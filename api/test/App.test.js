@@ -36,7 +36,6 @@ describe("Test the API", () => {
 			expect(jobResponse.statusCode).toBe(202);
 
 			const { UUID } = jobResponse.body;
-			console.log(UUID);
 
 			agent.get(`/api/jobs/${UUID}`).then(productsResponse => {
 				const { finished, hasNewData, data: products } = productsResponse.body;
