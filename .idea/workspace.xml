@@ -12,8 +12,7 @@
   <component name="ChangeListManager">
     <list default="true" id="77dc3b20-1a00-4828-8770-a80017687325" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/hooks/CustomHooks.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/CustomHooks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/test/App.test.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/test/App.test.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +23,7 @@
     <option name="done" value="true" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="113726" />
+    <option name="totalTimeSeconds" value="118352" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -69,17 +68,17 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/api/test" />
-      <recent name="$PROJECT_DIR$/client/src/scss" />
-      <recent name="$PROJECT_DIR$/client/src/components" />
-      <recent name="$PROJECT_DIR$/api/src" />
-      <recent name="$PROJECT_DIR$/src/components" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/client/src/tests/mockRequestData" />
       <recent name="$PROJECT_DIR$/api/test/testData" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/api/test" />
+      <recent name="$PROJECT_DIR$/client/src/scss" />
+      <recent name="$PROJECT_DIR$/client/src/components" />
+      <recent name="$PROJECT_DIR$/api/src" />
     </key>
   </component>
   <component name="RunManager">
@@ -119,7 +118,7 @@
       <workItem from="1610969316900" duration="15923000" />
       <workItem from="1611163488297" duration="8419000" />
       <workItem from="1611222482691" duration="3116000" />
-      <workItem from="1611336989319" duration="21751000" />
+      <workItem from="1611336989319" duration="26842000" />
     </task>
     <servers />
   </component>
@@ -180,10 +179,11 @@
       <screen x="926" y="0" width="2914" height="2160" />
     </state>
     <state width="498" height="446" key="SwitcherDM/870.2160.1920.1080/926.0.2914.2160@926.0.2914.2160" timestamp="1610980077895" />
-    <state x="489" y="1983" width="437" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1610306900202">
+    <state x="489" y="1983" width="437" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1611489750777">
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
     <state x="489" y="1983" width="437" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.1080.1920.1080/926.0.994.1080@0.1080.1920.1080" timestamp="1610306900202" />
+    <state x="489" y="1983" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.1080.1920.1080/996.0.924.1080@0.1080.1920.1080" timestamp="1611489750777" />
     <state x="748" y="1425" width="588" height="522" key="find.popup" timestamp="1611483393885">
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
