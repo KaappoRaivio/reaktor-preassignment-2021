@@ -4,24 +4,19 @@ import { act, screen } from "@testing-library/react";
 import App from "../App";
 
 import renderWithRouter from "./TestUtils";
-
-jest.mock("node-fetch", () => require("fetch-mock-jest"));
 import fetchMock from "fetch-mock";
-import Main from "../components/Main";
-import { fireEvent, wait, waitFor, waitForElement } from "@testing-library/dom";
+import { fireEvent, waitFor } from "@testing-library/dom";
 
 import categoriesMockResponse from "./mockRequestData/categories.json";
 import productsMockResponse from "./mockRequestData/products.json";
 import jobMockResponse from "./mockRequestData/jobs.json";
-import { BrowserRouter, MemoryRouter, Router } from "react-router-dom";
-import { createMemoryHistory } from "history";
-import MySwitch from "../components/MySwitch";
+
+jest.mock("node-fetch", () => require("fetch-mock-jest"));
 
 describe("Test the app", () => {
 	fetchMock.get("/api/categories/", categoriesMockResponse);
 	fetchMock.get("/api/products/", productsMockResponse);
 	fetchMock.get("/api/jobs/7ec4623d-5f4e-4815-b5f5-c1771a8a0d46", jobMockResponse);
-
 	test("It should show product categories correctly", done => {
 		const inner = async () => {
 			renderWithRouter(<App />);
@@ -36,10 +31,10 @@ describe("Test the app", () => {
 	//
 	test("It should show different products when clicking a category", done => {
 		const inner = async () => {
-			await act(async () => {
-				renderWithRouter(<App />);
-				// renderWithRouter(<App amountOfProductsToRender={3} amountOfProductsToIncrease={2} />);
-			});
+			// await act(async () => {
+			renderWithRouter(<App />);
+			// renderWithRouter(<App amountOfProductsToRender={3} amountOfProductsToIncrease={2} />);
+			// });
 
 			const categoryElements = await waitFor(() => screen.getAllByRole("button", { name: /^(?!load more).*$/i }));
 
@@ -56,7 +51,7 @@ describe("Test the app", () => {
 
 		inner().then(done);
 	});
-
+	//
 	test("It should show more products when requested", done => {
 		const inner = async () => {
 			await act(async () => {
@@ -108,7 +103,7 @@ describe("Test the app", () => {
 					}
 				);
 			});
-
+			await waitFor(() => screen.getAllByRole("listitem"));
 			const showMore = await waitFor(() => screen.getByRole("button", { name: /load more/i }));
 			fireEvent.click(showMore);
 
