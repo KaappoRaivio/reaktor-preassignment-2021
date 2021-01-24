@@ -174,7 +174,7 @@ describe("Test the routing", () => {
 	test("It should handle invalid URL param gracefully", done => {
 		const inner = async () => {
 			await act(async () => {
-				renderWithRouter(<App />, { route: "/category/xyzzy/" });
+				renderWithRouter(<App />, { route: "/category/null/" });
 			});
 			await waitFor(() => screen.getAllByText(/^Category: /i));
 		};
