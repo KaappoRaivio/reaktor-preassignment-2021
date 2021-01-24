@@ -15,12 +15,11 @@ const useRequest = (url, { retries = 3 } = {}) => {
 				if (response.status < 200 || response.status >= 300) {
 					if (retriesLeft > 0) {
 						setRetriesLeft(retriesLeft => retriesLeft - 1);
-						// return fetchData();
 					} else {
 						setError({ status: response.status, error: response.statusText });
 						setWaiting(false);
-						return;
 					}
+					return;
 				}
 
 				const JSON = await response.json();

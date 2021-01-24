@@ -36,9 +36,9 @@ const Product = ({ name, type, id, price, manufacturer, availability, color }) =
 
 Product.propTypes = {
 	name: PropTypes.string.isRequired,
+	type: PropTypes.string.isRequired,
 	id: PropTypes.string.isRequired,
 	price: PropTypes.number.isRequired,
-	type: PropTypes.string.isRequired,
 	manufacturer: PropTypes.string.isRequired,
 	availability: PropTypes.shape({ loading: PropTypes.bool.isRequired, availability: PropTypes.string }).isRequired,
 	color: PropTypes.arrayOf(PropTypes.string).isRequired,

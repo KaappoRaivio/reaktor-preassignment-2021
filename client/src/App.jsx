@@ -72,6 +72,7 @@ const App = props => {
 };
 
 App.propTypes = {
+	amountOfProductsToRender: PropTypes.number,
 	amountOfProductsToIncrease: PropTypes.number,
 };
 

@@ -1,7 +1,9 @@
+import React from "react";
+import PropTypes from "prop-types";
+
 import styles from "../scss/Main.module.scss";
 import Categories from "./Categories";
 import Products from "./Products";
-import React from "react";
 import MyErrorBoundary from "./MyErrorBoundary";
 
 const Main = ({
@@ -40,6 +42,15 @@ const Main = ({
 			</div>
 		</div>
 	);
+};
+
+Main.propTypes = {
+	amountOfProductsToRender: PropTypes.number.isRequired,
+	onMoreProductsRequested: PropTypes.func.isRequired,
+	onCategoryClicked: PropTypes.func.isRequired,
+	products: PropTypes.object.isRequired,
+	categories: PropTypes.arrayOf(PropTypes.string).isRequired,
+	selectedCategoryIndex: PropTypes.number.isRequired,
 };
 
 export default Main;

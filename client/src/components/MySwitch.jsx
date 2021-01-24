@@ -1,6 +1,6 @@
 import React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
-import Main from "./Main";
+import PropTypes from "prop-types";
 
 const MySwitch = ({ children }) => (
 	<Switch>
@@ -9,6 +9,8 @@ const MySwitch = ({ children }) => (
 	</Switch>
 );
 
-MySwitch.propTypes = {};
+MySwitch.propTypes = {
+	children: PropTypes.element,
+};
 
 export default MySwitch;

@@ -1,4 +1,6 @@
 # Preassignment for Reaktor's junior positions for 2021
+Both the front end and back end are hosted on the same heroku instance. The front end lives at `client/` and the back end at `api/`
+
 End-to-end tests for the front end, and unit tests for the back end are available: just run `yarn test` after installing the deps.
 
 ## Front end

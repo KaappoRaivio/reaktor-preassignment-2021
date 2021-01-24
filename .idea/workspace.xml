@@ -12,14 +12,16 @@
   <component name="ChangeListManager">
     <list default="true" id="77dc3b20-1a00-4828-8770-a80017687325" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/API.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/BadApiClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/BadApiClient.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/MyResponseJSONCache.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/MyResponseJSONCache.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/test/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/test/App.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Color.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Color.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/MySwitch.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/MySwitch.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Product.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Product.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Products.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Products.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/hooks/CustomHooks.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/CustomHooks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/logo.svg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +32,7 @@
     <option name="done" value="true" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="118732" />
+    <option name="totalTimeSeconds" value="119554" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -125,7 +127,7 @@
       <workItem from="1610969316900" duration="15923000" />
       <workItem from="1611163488297" duration="8419000" />
       <workItem from="1611222482691" duration="3116000" />
-      <workItem from="1611336989319" duration="27222000" />
+      <workItem from="1611336989319" duration="28115000" />
     </task>
     <servers />
   </component>
@@ -205,8 +207,8 @@
     <state x="729" y="1332" key="run.anything.popup/0.1080.1920.1080/996.0.924.1080@0.1080.1920.1080" timestamp="1611407654530" />
     <state x="2892" y="335" key="run.anything.popup/56.387.1864.1053/1920.0.2560.1440@1920.0.2560.1440" timestamp="1610702318853" />
     <state x="2032" y="503" key="run.anything.popup/870.2160.1920.1080/926.0.2914.2160@926.0.2914.2160" timestamp="1610970291310" />
-    <state x="2566" y="510" width="1020" height="678" key="search.everywhere.popup" timestamp="1611223762655">
-      <screen x="926" y="0" width="2914" height="2160" />
+    <state x="1081" y="1335" width="673" height="339" key="search.everywhere.popup" timestamp="1611491064560">
+      <screen x="0" y="1080" width="1920" height="1080" />
     </state>
     <state x="1533" y="479" width="771" height="683" key="search.everywhere.popup.inPresentationMode" timestamp="1611224560646">
       <screen x="926" y="0" width="2914" height="2160" />
@@ -214,6 +216,7 @@
     <state x="1533" y="479" width="771" height="683" key="search.everywhere.popup.inPresentationMode/870.2160.1920.1080/926.0.2914.2160@926.0.2914.2160" timestamp="1611224560646" />
     <state x="2557" y="401" width="672" height="678" key="search.everywhere.popup/0.1080.1920.1080/891.0.1029.1080@0.1080.1920.1080" timestamp="1610280607051" />
     <state x="1081" y="1335" width="672" height="339" key="search.everywhere.popup/0.1080.1920.1080/926.0.994.1080@0.1080.1920.1080" timestamp="1610367985971" />
+    <state x="1081" y="1335" width="673" height="339" key="search.everywhere.popup/0.1080.1920.1080/996.0.924.1080@0.1080.1920.1080" timestamp="1611491064560" />
     <state x="3361" y="340" width="896" height="452" key="search.everywhere.popup/56.387.1864.1053/1920.0.2560.1440@1920.0.2560.1440" timestamp="1610715015218" />
     <state x="2552" y="509" width="672" height="678" key="search.everywhere.popup/835.2160.1920.1080/891.0.2949.2160@891.0.2949.2160" timestamp="1610280672067" />
     <state x="2566" y="510" width="1020" height="678" key="search.everywhere.popup/870.2160.1920.1080/926.0.2914.2160@926.0.2914.2160" timestamp="1611223762655" />
