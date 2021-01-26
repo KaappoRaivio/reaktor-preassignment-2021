@@ -8,7 +8,9 @@ class MyResponseJSONCache {
 	}
 
 	get(key, onCacheMissed, isValidResponse = () => true) {
+		console.log(`Getting ${key}`);
 		const promise = this.cache.get(key);
+		console.log(`Got ${key}`);
 
 		if (promise) {
 			debug(`Cache hit for ${key}`);
