@@ -40,6 +40,9 @@ module.exports = app => {
 
 	app.get("/api/jobs/:UUID", async (req, res, next) => {
 		try {
+			await new Promise(resolve => {
+				setTimeout(resolve, 3000);
+			});
 			const { UUID } = req.params;
 
 			if (!validateUUID(UUID)) {

@@ -61,6 +61,7 @@ const usePollingRequest = (pollingInitializationURL, pollingURL) => {
 	const [finished, setFinished] = useState(false);
 	const [data, setData] = useState(null);
 	const [error, setError] = useState(null);
+	const [currentlyPolling, setCurrentlyPolling] = useState(false);
 
 	if (!pollingInitializationWaiting && UUID == null) {
 		setUUID(JSON.UUID);
@@ -68,8 +69,11 @@ const usePollingRequest = (pollingInitializationURL, pollingURL) => {
 
 	useInterval(
 		async () => {
-			if (UUID) {
+			if (UUID && !currentlyPolling) {
+				setCurrentlyPolling(true);
 				const response = await fetch(`${pollingURL}${UUID}`);
+				setCurrentlyPolling(false);
+
 				if (response.status < 200 || response.status >= 300) {
 					return;
 				}

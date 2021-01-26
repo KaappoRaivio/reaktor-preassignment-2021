@@ -5,7 +5,7 @@ const debug = require("debug")("App.js");
 const compression = require("compression");
 
 const app = express();
-// app.use(compression());
+app.use(compression());
 API(app);
 app.use((err, req, res, next) => {
 	res.status(500);
