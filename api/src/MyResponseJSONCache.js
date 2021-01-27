@@ -7,9 +7,9 @@ class MyResponseJSONCache {
 		this.cache = new NodeCache({ stdTTL: 300, checkperiod: 60, useClones: false });
 	}
 
-	get(key, onCacheMissed, isValidResponse = () => true) {
+	async get(key, onCacheMissed, isValidResponse = () => true) {
 		console.log(`Getting ${key}`);
-		const promise = this.cache.get(key);
+		const promise = await new Promise(resolve => resolve(this.cache.get(key)));
 		console.log(`Got ${key}`);
 
 		if (promise) {

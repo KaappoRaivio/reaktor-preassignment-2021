@@ -2,8 +2,8 @@ const fetch = require("node-fetch");
 const MyResponseJSONCache = require("./MyResponseJSONCache");
 
 const requestCache = new MyResponseJSONCache();
-const cachedJSONFetch = (url, isValidResponse = () => true) => {
-	return requestCache.get(
+const cachedJSONFetch = async (url, isValidResponse = () => true) => {
+	return await requestCache.get(
 		url,
 		() => {
 			return fetch(url).then(res => {
