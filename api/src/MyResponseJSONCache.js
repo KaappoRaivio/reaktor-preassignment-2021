@@ -44,7 +44,22 @@ class MyResponseJSONCache {
 			this.pendingCache.del(key);
 		});
 	}
+	/*
+	Three cases:
+		1. A resource is requested that the cache has never seen
+			-> neither resultCache nor pendingCache have entries for it.
+			onCacheMissed is called.
+			pendingCache entry is set to a promise that resolves when resultCache entry is filled
+			when onCacheMissed resolves, resultCache entry is set to its contents.
 
+		2. A resource is requested that the cache knows about but doesn't yet have the results for
+			-> resultCache doesn't have an entry, pendingCache does.
+			the pendingCache entry is returned.
+
+		3. A resource is requested that the cache has a result available readily
+			-> both resultCache and pendingCache have an entry
+			the resultCache entry is returned
+	* */
 	async getOrFill(key, isValidResponse = () => true, maxRetries = 10) {
 		const resultPromise = await new Promise(resolve => resolve(this.resultCache.get(key)));
 		if (resultPromise) {
