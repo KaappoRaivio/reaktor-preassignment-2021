@@ -23,12 +23,14 @@ module.exports = app => {
 			newJob.data = products;
 			newJob.hasNewData = true;
 
-			let availability = {};
+			let availabilityFunctions = [];
 			getAvailabilityPromises(products).map(availabilityPromise =>
 				availabilityPromise.then(({ availabilityData, isLastPromise }) => {
-					availability = { ...availability, ...availabilityData };
+					availabilityFunctions.push(availabilityData);
 
-					newJob.data = combineAvailabilityWithProductInformation(products, availability);
+					newJob.data = combineAvailabilityWithProductInformation(products, id =>
+						availabilityFunctions.map(f => f(id)).find(value => value != null)
+					);
 					newJob.hasNewData = true;
 					if (isLastPromise) {
 						debug(`Finished job ${newJob.UUID}`);

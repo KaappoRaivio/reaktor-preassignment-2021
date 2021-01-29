@@ -1,6 +1,7 @@
 const debug = require("debug")("r:MyResponseJSONCache");
 
 const NodeCache = require("node-cache");
+const fetch = require("node-fetch");
 
 const waitUntil = predicate => {
 	return new Promise(resolve => {
@@ -10,6 +11,19 @@ const waitUntil = predicate => {
 			}
 		};
 		inner().then(resolve).catch(console.error);
+	});
+};
+
+const onCacheMissed = url => {
+	debug(`Cache miss for ${url}`);
+	return fetch(url).then(res => {
+		debug(`Response for url ${url}`);
+		if (res.ok) {
+			return res;
+		} else {
+			debug(`Request to ${url} got status ${res.status}!`);
+			throw new Error(`Request to ${url} got status ${res.status}!`);
+		}
 	});
 };
 
@@ -26,9 +40,12 @@ class MyResponseJSONCache {
 				}
 			}
 		});
+		this.resultCache.on("del", (key, value) => {
+			this.pendingCache.del(key);
+		});
 	}
 
-	async get(key, onCacheMissed, isValidResponse = () => true) {
+	async getOrFill(key, isValidResponse = () => true, maxRetries = 10) {
 		const resultPromise = await new Promise(resolve => resolve(this.resultCache.get(key)));
 		if (resultPromise) {
 			debug(`resultCache hit for ${key}`);
@@ -46,7 +63,7 @@ class MyResponseJSONCache {
 			new Promise(resolve => {
 				waitUntil(() => this.resultCache.get(key))
 					.then(() => {
-						debug(`Filled cache for ${key}`);
+						debug(`Filled resultCache for ${key}`);
 						return this.resultCache.get(key);
 					})
 					.then(resolve)
@@ -56,28 +73,19 @@ class MyResponseJSONCache {
 
 		let json;
 		do {
-			const promise = onCacheMissed();
+			const promise = onCacheMissed(key);
 			const res = await promise;
 			json = await res.json();
 
 			if (!isValidResponse(json)) {
 				debug(`Received invalid response for key ${key}: ${JSON.stringify(json)}`);
 			}
-		} while (!isValidResponse(json));
+
+			maxRetries -= 1;
+		} while (!isValidResponse(json) && maxRetries >= 0);
 
 		this.resultCache.set(key, new Promise(resolve => resolve(json)));
-
 		return new Promise(resolve => resolve(json));
-		// return promise
-		// 	.then(res => res.json())
-		// 	.then(json => {
-		// 		if (isValidResponse(json)) {
-		// 			this.resultCache.set(key, new Promise(resolve => resolve(json)));
-		// 		} else {
-		// 			debug(`Received invalid response for key ${key}: ${JSON.stringify(json)}`);
-		// 		}
-		// 		return json;
-		// 	});
 	}
 }
 

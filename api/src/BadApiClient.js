@@ -20,19 +20,13 @@ const getCategory = category => {
 		.catch(err => debug(err));
 };
 
-const getAvailability = (manufacturer, maxRetries) => {
-	if (maxRetries == null) maxRetries = 3;
-	const isValidResponse = json => json.response !== "[]";
+const getAvailability = manufacturer => {
+	const isValidResponse = json => json.response != null && json.response !== "[]";
+
 	return cachedJSONFetch(`${API_ENDPOINT}/availability/${manufacturer}`, isValidResponse)
 		.then(responseJSON => {
 			if (!isValidResponse(responseJSON)) {
-				debug(`Got bad response for manufacturer ${manufacturer}`);
-				if (maxRetries >= 0) {
-					debug(`Retrying for manufacturer ${manufacturer}, ${maxRetries - 1} left`);
-					return getAvailability(manufacturer, maxRetries - 1);
-				} else {
-					throw new Error(`Got bad response for manufacturer ${manufacturer} and not retries left`);
-				}
+				return id => "No data";
 			}
 
 			const result = {};
@@ -40,12 +34,12 @@ const getAvailability = (manufacturer, maxRetries) => {
 				const { id, DATAPAYLOAD } = entry;
 				result[id.toLowerCase()] = parseAvailabilityResponse(DATAPAYLOAD);
 			}
-			return result;
+			return id => result[id];
 		})
 		.catch(err => {
 			debug(`Didn't get results for ${manufacturer}`);
 			debug(err);
-			return [];
+			return id => "No data";
 		});
 };
 
@@ -65,16 +59,14 @@ const getAvailabilityPromises = products => {
 	const manufacturers = getManufacturers(products);
 	let counter = 0;
 
-	return manufacturers
-		.map(manufacturer => getAvailability(manufacturer))
-		.map(availabilityRequest =>
-			availabilityRequest.then(availabilityData => {
-				counter += 1;
+	return manufacturers.map(getAvailability).map(availabilityPromise =>
+		availabilityPromise.then(availabilityData => {
+			counter += 1;
 
-				let isLastPromise = counter === manufacturers.length;
-				return { availabilityData, isLastPromise };
-			})
-		);
+			let isLastPromise = counter === manufacturers.length;
+			return { availabilityData, isLastPromise };
+		})
+	);
 };
 
 module.exports = { getProducts, getAvailabilityPromises, PRODUCT_CATEGORIES, API_ENDPOINT };
