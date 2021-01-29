@@ -48,7 +48,7 @@ Main.propTypes = {
 	amountOfProductsToRender: PropTypes.number.isRequired,
 	onMoreProductsRequested: PropTypes.func.isRequired,
 	onCategoryClicked: PropTypes.func.isRequired,
-	products: PropTypes.object.isRequired,
+	products: PropTypes.object,
 	categories: PropTypes.arrayOf(PropTypes.string).isRequired,
 	selectedCategoryIndex: PropTypes.number.isRequired,
 };
