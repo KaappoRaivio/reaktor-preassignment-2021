@@ -1,7 +1,7 @@
 const express = require("express");
 const memoryCache = require("memory-cache");
 const API = require("./API.js");
-const debug = require("debug")("App.js");
+const debug = require("debug")("r:App.js");
 const compression = require("compression");
 
 const app = express();

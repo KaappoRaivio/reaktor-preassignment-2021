@@ -25,6 +25,7 @@
 	},
 	"scripts": {
 		"start": "node index.js",
+		"startDev": "DEBUG=r:* node index.js",
 		"heroku-postbuild": "cd client && yarn && yarn run build",
 		"test": "yarn jest --runInBand && cd client/ && yarn test --watchAll=false"
 	},

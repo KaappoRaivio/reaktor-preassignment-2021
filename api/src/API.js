@@ -1,3 +1,5 @@
+const debug = require("debug")("r:API");
+
 const { combineAvailabilityWithProductInformation } = require("./ProcessData");
 const { v4: uuidv4, validate: validateUUID } = require("uuid");
 const { getProducts, getAvailabilityPromises, PRODUCT_CATEGORIES } = require("./BadApiClient");
@@ -29,6 +31,7 @@ module.exports = app => {
 					newJob.data = combineAvailabilityWithProductInformation(products, availability);
 					newJob.hasNewData = true;
 					if (isLastPromise) {
+						debug(`Finished job ${newJob.UUID}`);
 						newJob.finished = true;
 					}
 				})

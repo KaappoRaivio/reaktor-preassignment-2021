@@ -1,4 +1,4 @@
-const debug = require("debug")("BadApiClient");
+const debug = require("debug")("r:BadApiClient");
 
 const cachedJSONFetch = require("./CachedJSONFetch");
 
@@ -20,14 +20,18 @@ const getCategory = category => {
 		.catch(err => debug(err));
 };
 
-const getAvailability = (manufacturer, maxRetries = 3) => {
-	return cachedJSONFetch(`${API_ENDPOINT}/availability/${manufacturer}`, json => json.response !== "[]")
+const getAvailability = (manufacturer, maxRetries) => {
+	if (maxRetries == null) maxRetries = 3;
+	const isValidResponse = json => json.response !== "[]";
+	return cachedJSONFetch(`${API_ENDPOINT}/availability/${manufacturer}`, isValidResponse)
 		.then(responseJSON => {
-			if (responseJSON.response === "[]") {
+			if (!isValidResponse(responseJSON)) {
+				debug(`Got bad response for manufacturer ${manufacturer}`);
 				if (maxRetries >= 0) {
+					debug(`Retrying for manufacturer ${manufacturer}, ${maxRetries - 1} left`);
 					return getAvailability(manufacturer, maxRetries - 1);
 				} else {
-					return Promise.reject();
+					throw new Error(`Got bad response for manufacturer ${manufacturer} and not retries left`);
 				}
 			}
 
@@ -61,14 +65,16 @@ const getAvailabilityPromises = products => {
 	const manufacturers = getManufacturers(products);
 	let counter = 0;
 
-	return manufacturers.map(getAvailability).map(availabilityRequest =>
-		availabilityRequest.then(availabilityData => {
-			counter += 1;
+	return manufacturers
+		.map(manufacturer => getAvailability(manufacturer))
+		.map(availabilityRequest =>
+			availabilityRequest.then(availabilityData => {
+				counter += 1;
 
-			let isLastPromise = counter === manufacturers.length;
-			return { availabilityData, isLastPromise };
-		})
-	);
+				let isLastPromise = counter === manufacturers.length;
+				return { availabilityData, isLastPromise };
+			})
+		);
 };
 
 module.exports = { getProducts, getAvailabilityPromises, PRODUCT_CATEGORIES, API_ENDPOINT };
