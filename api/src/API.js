@@ -35,6 +35,11 @@ module.exports = app => {
 					if (isLastPromise) {
 						debug(`Finished job ${newJob.UUID}`);
 						newJob.finished = true;
+						setTimeout(() => {
+							if (newJob in jobs) {
+								delete jobs[newJob];
+							}
+						}, 5000);
 					}
 				})
 			);
